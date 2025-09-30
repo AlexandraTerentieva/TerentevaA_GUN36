@@ -302,6 +302,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 573387507479344944, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: field of view
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 573387507479344944, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: far clip plane
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 573387507479344944, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: near clip plane
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804818819216664715, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.57707584
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804818819216664715, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.289799
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804818819216664715, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 12.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804818819216664715, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.00000012564573
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804818819216664715, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000015561637
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804818819216664715, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.99241734
+      objectReference: {fileID: 0}
+    - target: {fileID: 1804818819216664715, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.12291415
+      objectReference: {fileID: 0}
     - target: {fileID: 4478341443067209865, guid: 4f497ba3fcaf2cb419c3489bf8b3ff1e, type: 3}
       propertyPath: _prefab
       value: 
