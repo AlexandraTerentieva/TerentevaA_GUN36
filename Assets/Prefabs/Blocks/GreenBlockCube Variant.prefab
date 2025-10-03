@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GreenBlockCube Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 2587383829726428042, guid: da5d5865adbcb9840bb80240cbcbb359, type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2336088621229553262, guid: da5d5865adbcb9840bb80240cbcbb359, type: 3}
