@@ -1,38 +1,57 @@
+ο»Ώusing System.Collections;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+namespace Netologia.Homework
 {
-    [SerializeField] private GameObject _ballPrefab;
-    [SerializeField] private Transform _ballSpawnPoint;
-    [SerializeField] private float _shootForce = 10f;
+	public class Player : MonoBehaviour
+	{
+		private bool _ready;
+		private Rigidbody _ball;
+		
+		[SerializeField]
+		private Rigidbody _ballPrefab;
+		[SerializeField]
+		private float _startVelocity;
+		[SerializeField]
+		private float _lifetime;
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+		[SerializeField]
+		private float _respawnDelay;
+
+        private void Update()
         {
-            ShootBall();
-        }
-    }
+            Debug.Log("Update Ρ€Π°Π±ΠΎΡ‚Π°ΠµΡ‚, _ready = " + _ready);
 
-    private void ShootBall()
-    {
-        if (_ballPrefab == null)
+            if (!_ready) return;
+
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Debug.Log("Space Π½Π°Π¶Π°Ρ‚!");
+                StartCoroutine(Reloader());
+                _ball.isKinematic = false;
+                _ball.transform.parent = null;
+                _ball.velocity = transform.forward * _startVelocity;
+                Destroy(_ball.gameObject, _lifetime);
+            }
+        }
+
+        private IEnumerator Reloader()
+		{
+			_ready = false;
+			yield return new WaitForSeconds(_respawnDelay);
+			Spawn();
+		}
+
+        private void Spawn()
         {
-            Debug.LogError("Ball Prefab νε νΰηνΰχεν!");
-            return;
+            _ball = Instantiate(_ballPrefab, transform.position, Quaternion.identity);
+            _ball.isKinematic = true;
+            _ready = true;
         }
 
-        GameObject ball = Instantiate(_ballPrefab, _ballSpawnPoint.position, Quaternion.identity);
-
-        if (ball.GetComponent<Ball>() == null)
-        {
-            ball.AddComponent<Ball>();
-        }
-
-        Rigidbody ballRb = ball.GetComponent<Rigidbody>();
-        if (ballRb != null)
-        {
-            ballRb.AddForce(transform.forward * _shootForce, ForceMode.Impulse);
-        }
-    }
+        private void Start()
+		{
+			Spawn();
+		}
+	}
 }
