@@ -1,55 +1,35 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
-using System.Collections.Generic;
 
-public class Cell : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerClickHandler
+public class Cell : MonoBehaviour, IPointerClickHandler
 {
-    [SerializeField] private GameObject _focus;
-    [SerializeField] private GameObject _select;
-
-    private List<Cell> _neighbours = new List<Cell>();
-    public IReadOnlyList<Cell> Neighbours => _neighbours;
-
     public Unit Unit { get; set; }
-    public event System.Action<Cell> OnPointerClickEvent;
+    public int X { get; set; }
+    public int Z { get; set; }
 
-    public void AddNeighbour(Cell neighbour)
-    {
-        if (!_neighbours.Contains(neighbour))
-            _neighbours.Add(neighbour);
-    }
+    private Renderer rend;
+    private Color normalColor;
 
-    public bool IsNeighbour(Cell cell)
+    void Start()
     {
-        return _neighbours.Contains(cell);
-    }
-
-    public void OnPointerEnter(PointerEventData eventData)
-    {
-        if (_focus != null) _focus.SetActive(true);
-    }
-
-    public void OnPointerExit(PointerEventData eventData)
-    {
-        if (_focus != null) _focus.SetActive(false);
+        rend = GetComponent<Renderer>();
+        if (rend != null)
+            normalColor = rend.material.color;
     }
 
     public void OnPointerClick(PointerEventData eventData)
     {
-        OnPointerClickEvent?.Invoke(this);
+        Debug.Log($"[Cell]  лик по {name}");
+
+        if (BattleController.Instance != null)
+            BattleController.Instance.MoveToCell(this);
+        else
+            Debug.LogError("[Cell] BattleController.Instance = null!");
     }
 
-    public void SetSelect(Material material)
+    public void SetHighlight(bool active)
     {
-        if (_select != null)
-        {
-            _select.SetActive(true);
-            _select.GetComponent<Renderer>().material = material;
-        }
-    }
-
-    public void ResetSelect()
-    {
-        if (_select != null) _select.SetActive(false);
+        if (rend != null)
+            rend.material.color = active ? Color.green : normalColor;
     }
 }

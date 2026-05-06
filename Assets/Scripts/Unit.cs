@@ -1,39 +1,45 @@
-using UnityEngine;
-using System.Collections;
+Ôªøusing UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Unit : MonoBehaviour
+public class Unit : MonoBehaviour, IPointerClickHandler
 {
-    public Cell Cell { get; set; }
-    public event System.Action OnMoveEndCallback;
+    public PieceType Type;
+    public Team team;
+    public bool HasMoved;
+    public Cell CurrentCell;
 
-    private void Start()
+    private Renderer unitRenderer;
+    private Color originalColor;
+
+    void Start()
     {
+        Vector3 pos = transform.position;
+        pos.y = 0.5f;
+        transform.position = pos;
+
         if (GetComponent<Collider>() == null)
             gameObject.AddComponent<BoxCollider>();
+
+        unitRenderer = GetComponent<Renderer>();
+        if (unitRenderer != null)
+            originalColor = unitRenderer.material.color;
     }
 
-    public void Move(Cell targetCell)
+    public void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log($"ƒ‚Ë„‡˛ ˛ÌËÚ‡ Ò {Cell.name} Ì‡ {targetCell.name}");
-        StartCoroutine(MoveRoutine(targetCell));
+        Debug.Log($"[Unit] –ö–ª–∏–∫ –ø–æ {Type} –∫–æ–º–∞–Ω–¥—ã {team}");
+
+        if (BattleController.Instance != null)
+            BattleController.Instance.SelectUnit(this);
+        else
+            Debug.LogError("[Unit] BattleController.Instance = null!");
     }
 
-    private IEnumerator MoveRoutine(Cell target)
+    public void SetHighlight(bool active)
     {
-        Vector3 start = transform.position;
-        Vector3 end = target.transform.position;
-        float t = 0;
-        float speed = 5f;
-
-        while (t < 1)
+        if (unitRenderer != null)
         {
-            t += Time.deltaTime * speed;
-            transform.position = Vector3.Lerp(start, end, t);
-            yield return null;
+            unitRenderer.material.color = active ? Color.yellow : originalColor;
         }
-
-        transform.position = end;
-        Cell = target;
-        OnMoveEndCallback?.Invoke();
     }
 }
