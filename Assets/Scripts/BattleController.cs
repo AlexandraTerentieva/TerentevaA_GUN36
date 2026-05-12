@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-public class BattleController : MonoBehaviour
+public class BattleController : MonoBehaviour, ISharedData
 {
     public static BattleController Instance;
 
@@ -13,34 +13,46 @@ public class BattleController : MonoBehaviour
     private List<Cell> currentMoves = new List<Cell>();
     private PlayerController playerController;
 
+    // Реализация ISharedData
+    public GameEvent Event { get; set; }
+    public Cell Target { get; set; }
+
     void Awake()
     {
         Instance = this;
-        Debug.Log("[BattleController] Awake - Instance создан");
+        playerController = GetComponent<PlayerController>();
+        if (playerController == null)
+            playerController = gameObject.AddComponent<PlayerController>();
+        Event = GameEvent.None;
     }
 
     void Start()
     {
-        playerController = GetComponent<PlayerController>();
-        if (playerController == null)
-            playerController = gameObject.AddComponent<PlayerController>();
-
         FindAllCells();
         FindAllUnits();
         ConnectUnitsToCells();
-        Debug.Log("[BattleController] Игра запущена. Ходят БЕЛЫЕ (White)");
+        Debug.Log("BattleController: Игра запущена. Ходят БЕЛЫЕ (White)");
     }
 
     void Update()
     {
-        // Cancel (ESC)
-        if (Input.GetKeyDown(KeyCode.Escape))
+        // Обрабатываем событие NewTurn от чита
+        if (Event == GameEvent.NewTurn)
         {
-            if (selectedUnit != null)
-                selectedUnit.SetHighlight(false);
-            selectedUnit = null;
-            ClearHighlights();
-            Debug.Log("[Cancel] Выбор сброшен");
+            SwitchTurn();
+            Event = GameEvent.None;
+        }
+
+        // Обрабатываем событие PerformAttack от чита (опционально)
+        if (Event == GameEvent.PerformAttack && Target != null && Target.Unit != null)
+        {
+            if (Target.Unit.team != currentTurn)
+            {
+                DestroyImmediate(Target.Unit.gameObject);
+                Target.Unit = null;
+                Debug.Log($"[ISharedData] Убита фигура через Event");
+            }
+            Event = GameEvent.None;
         }
     }
 
@@ -58,7 +70,7 @@ public class BattleController : MonoBehaviour
                 cell.Z = int.Parse(parts[2]);
             }
         }
-        Debug.Log($"[BattleController] Найдено клеток: {allCells.Count}");
+        Debug.Log($"Найдено клеток: {allCells.Count}");
     }
 
     void FindAllUnits()
@@ -69,7 +81,7 @@ public class BattleController : MonoBehaviour
         {
             allUnits.Add(unit);
         }
-        Debug.Log($"[BattleController] Найдено фигур: {allUnits.Count}");
+        Debug.Log($"Найдено фигур: {allUnits.Count}");
     }
 
     void ConnectUnitsToCells()
@@ -78,7 +90,6 @@ public class BattleController : MonoBehaviour
         {
             Cell closestCell = null;
             float minDist = 1f;
-
             foreach (Cell cell in allCells)
             {
                 float dist = Vector3.Distance(unit.transform.position, cell.transform.position);
@@ -100,54 +111,26 @@ public class BattleController : MonoBehaviour
                 if (unit.team != Team.White && unit.team != Team.Black)
                     unit.team = closestCell.Z < 4 ? Team.White : Team.Black;
 
-                Debug.Log($"[Связь] {unit.Type} {unit.team} на {closestCell.name}");
+                Debug.Log($"Связь: {unit.Type} {unit.team} на {closestCell.name}");
             }
         }
     }
 
     public void SelectUnit(Unit unit)
     {
-        Debug.Log($"[SelectUnit] Вызван для {unit.Type} {unit.team}. Текущий ход: {currentTurn}");
-
-        if (playerController != null && playerController.IsBusy)
-        {
-            Debug.Log("  Анимация, подождите");
-            return;
-        }
-
-        if (unit.team != currentTurn)
-        {
-            Debug.Log($"  НЕЛЬЗЯ: ходят {currentTurn}");
-            return;
-        }
-
-        if (selectedUnit != null)
-            selectedUnit.SetHighlight(false);
+        if (playerController != null && playerController.IsBusy) return;
+        if (unit.team != currentTurn) return;
 
         selectedUnit = unit;
-        selectedUnit.SetHighlight(true);
-
         ShowAvailableMoves(unit);
-        Debug.Log($"  ВЫБРАНА фигура {unit.Type}");
+        Debug.Log($"Выбрана фигура {unit.Type}");
     }
 
     public void MoveToCell(Cell cell)
     {
-        Debug.Log($"[MoveToCell] Вызван для {cell.name}");
+        if (selectedUnit == null) return;
+        if (!currentMoves.Contains(cell)) return;
 
-        if (selectedUnit == null)
-        {
-            Debug.Log("  Нет выбранной фигуры");
-            return;
-        }
-
-        if (!currentMoves.Contains(cell))
-        {
-            Debug.Log($"  Клетка {cell.name} не в списке доступных");
-            return;
-        }
-
-        Debug.Log($"  Ход разрешён!");
         MakeMove(selectedUnit, cell);
     }
 
@@ -156,39 +139,34 @@ public class BattleController : MonoBehaviour
         ClearHighlights();
         currentMoves.Clear();
 
-        if (unit.CurrentCell == null)
-        {
-            Debug.LogError($"У {unit.Type} нет CurrentCell!");
-            return;
-        }
+        if (unit.CurrentCell == null) return;
 
         List<Cell> moves = MoveGenerator.GetValidMoves(unit, allCells);
-
-        Debug.Log($"[ХОДЫ] Для {unit.Type} найдено: {moves.Count}");
 
         foreach (Cell cell in moves)
         {
             currentMoves.Add(cell);
             cell.SetHighlight(true);
-            Debug.Log($"  + {cell.name} ({cell.X},{cell.Z})");
         }
+
+        Debug.Log($"Найдено ходов: {currentMoves.Count}");
     }
 
     void MakeMove(Unit unit, Cell targetCell)
     {
-        Debug.Log($"[MakeMove] {unit.Type} -> {targetCell.name}");
-
         Cell oldCell = unit.CurrentCell;
+
+        // Обновляем ISharedData
+        Event = GameEvent.PerformMove;
+        Target = targetCell;
 
         if (targetCell.Unit != null && targetCell.Unit.team != unit.team)
         {
-            Debug.Log($"  Убита {targetCell.Unit.Type}");
+            Event = GameEvent.PerformAttack;
+            Target = targetCell;
+            Debug.Log($"[ISharedData] Убита фигура {targetCell.Unit.Type}");
             Destroy(targetCell.Unit.gameObject);
         }
-
-        // Убираем подсветку с выбранной фигуры перед ходом
-        if (selectedUnit != null)
-            selectedUnit.SetHighlight(false);
 
         playerController.ExecuteMove(unit, targetCell, () =>
         {
@@ -196,10 +174,7 @@ public class BattleController : MonoBehaviour
             unit.HasMoved = true;
 
             if (unit.Type == PieceType.Pawn && (targetCell.Z == 0 || targetCell.Z == 7))
-            {
                 unit.Type = PieceType.Queen;
-                Debug.Log("  Пешка -> Ферзь!");
-            }
 
             SwitchTurn();
         });
@@ -208,15 +183,16 @@ public class BattleController : MonoBehaviour
         ClearHighlights();
     }
 
+    public void SwitchTurn()
+    {
+        currentTurn = (currentTurn == Team.White) ? Team.Black : Team.White;
+        Event = GameEvent.NewTurn;
+        Debug.Log($"[ISharedData] NewTurn! Теперь ходят: {currentTurn}");
+    }
+
     void ClearHighlights()
     {
         foreach (Cell cell in allCells)
             cell.SetHighlight(false);
-    }
-
-    void SwitchTurn()
-    {
-        currentTurn = (currentTurn == Team.White) ? Team.Black : Team.White;
-        Debug.Log($"========== Ход переключён: {currentTurn} ==========");
     }
 }
