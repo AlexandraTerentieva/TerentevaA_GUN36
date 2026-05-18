@@ -3,7 +3,6 @@ using UnityEngine;
 
 public static class MoveGenerator
 {
-    // Получить все доступные ходы для фигуры
     public static List<Cell> GetValidMoves(Unit unit, List<Cell> allCells)
     {
         List<Cell> moves = new List<Cell>();
@@ -46,37 +45,31 @@ public static class MoveGenerator
         return null;
     }
 
-    // ==================== ПЕШКА ====================
     static void AddPawnMoves(Unit unit, List<Cell> allCells, List<Cell> moves, int x, int z)
     {
-        int direction = (unit.team == Team.White) ? 1 : -1;
+        int dir = (unit.team == Team.White) ? 1 : -1;
 
-        // Ход вперёд на 1 клетку
-        Cell forward = FindCell(allCells, x, z + direction);
+        Cell forward = FindCell(allCells, x, z + dir);
         if (forward != null && forward.Unit == null)
             moves.Add(forward);
 
-        // Первый ход на 2 клетки
         if (!unit.HasMoved)
         {
-            Cell forward2 = FindCell(allCells, x, z + direction * 2);
-            Cell middle = FindCell(allCells, x, z + direction);
+            Cell forward2 = FindCell(allCells, x, z + dir * 2);
+            Cell middle = FindCell(allCells, x, z + dir);
             if (forward2 != null && forward2.Unit == null && middle != null && middle.Unit == null)
                 moves.Add(forward2);
         }
 
-        // Атака по диагонали влево
-        Cell attackLeft = FindCell(allCells, x - 1, z + direction);
+        Cell attackLeft = FindCell(allCells, x - 1, z + dir);
         if (attackLeft != null && attackLeft.Unit != null && attackLeft.Unit.team != unit.team)
             moves.Add(attackLeft);
 
-        // Атака по диагонали вправо
-        Cell attackRight = FindCell(allCells, x + 1, z + direction);
+        Cell attackRight = FindCell(allCells, x + 1, z + dir);
         if (attackRight != null && attackRight.Unit != null && attackRight.Unit.team != unit.team)
             moves.Add(attackRight);
     }
 
-    // ==================== КОНЬ ====================
     static void AddKnightMoves(List<Cell> allCells, List<Cell> moves, Unit unit, int x, int z)
     {
         int[] dx = { 2, 2, 1, 1, -1, -1, -2, -2 };
@@ -90,40 +83,22 @@ public static class MoveGenerator
         }
     }
 
-    // ==================== ЛАДЬЯ ====================
     static void AddRookMoves(List<Cell> allCells, List<Cell> moves, Unit unit, int x, int z)
     {
-        AddLine(allCells, moves, unit, x, z, 0, 1);   // вверх
-        AddLine(allCells, moves, unit, x, z, 0, -1);  // вниз
-        AddLine(allCells, moves, unit, x, z, 1, 0);   // вправо
-        AddLine(allCells, moves, unit, x, z, -1, 0);  // влево
+        AddLine(allCells, moves, unit, x, z, 0, 1);
+        AddLine(allCells, moves, unit, x, z, 0, -1);
+        AddLine(allCells, moves, unit, x, z, 1, 0);
+        AddLine(allCells, moves, unit, x, z, -1, 0);
     }
 
-    // ==================== СЛОН ====================
     static void AddBishopMoves(List<Cell> allCells, List<Cell> moves, Unit unit, int x, int z)
     {
-        AddLine(allCells, moves, unit, x, z, 1, 1);    // вверх-вправо
-        AddLine(allCells, moves, unit, x, z, 1, -1);   // вниз-вправо
-        AddLine(allCells, moves, unit, x, z, -1, 1);   // вверх-влево
-        AddLine(allCells, moves, unit, x, z, -1, -1);  // вниз-влево
+        AddLine(allCells, moves, unit, x, z, 1, 1);
+        AddLine(allCells, moves, unit, x, z, 1, -1);
+        AddLine(allCells, moves, unit, x, z, -1, 1);
+        AddLine(allCells, moves, unit, x, z, -1, -1);
     }
 
-    // ==================== КОРОЛЬ ====================
-    static void AddKingMoves(List<Cell> allCells, List<Cell> moves, Unit unit, int x, int z)
-    {
-        for (int dx = -1; dx <= 1; dx++)
-        {
-            for (int dz = -1; dz <= 1; dz++)
-            {
-                if (dx == 0 && dz == 0) continue;
-                Cell cell = FindCell(allCells, x + dx, z + dz);
-                if (cell != null && (cell.Unit == null || cell.Unit.team != unit.team))
-                    moves.Add(cell);
-            }
-        }
-    }
-
-    // ==================== ЛИНИЯ (для ладьи, слона, ферзя) ====================
     static void AddLine(List<Cell> allCells, List<Cell> moves, Unit unit, int x, int z, int dx, int dz)
     {
         int nx = x + dx;
@@ -147,6 +122,52 @@ public static class MoveGenerator
 
             nx += dx;
             nz += dz;
+        }
+    }
+
+    static void AddKingMoves(List<Cell> allCells, List<Cell> moves, Unit unit, int x, int z)
+    {
+        // Обычные ходы короля
+        for (int dx = -1; dx <= 1; dx++)
+        {
+            for (int dz = -1; dz <= 1; dz++)
+            {
+                if (dx == 0 && dz == 0) continue;
+                Cell cell = FindCell(allCells, x + dx, z + dz);
+                if (cell != null && (cell.Unit == null || cell.Unit.team != unit.team))
+                    moves.Add(cell);
+            }
+        }
+
+        // Рокировка (только если король не двигался)
+        if (unit.HasMoved) return;
+
+        int row = (unit.team == Team.White) ? 0 : 7;
+
+        // Короткая рокировка (H)
+        Cell rookRight = FindCell(allCells, 7, row);
+        Cell betweenRight1 = FindCell(allCells, 5, row);
+        Cell betweenRight2 = FindCell(allCells, 6, row);
+        if (rookRight != null && rookRight.Unit != null &&
+            rookRight.Unit.Type == PieceType.Rook && !rookRight.Unit.HasMoved &&
+            betweenRight1 != null && betweenRight1.Unit == null &&
+            betweenRight2 != null && betweenRight2.Unit == null)
+        {
+            moves.Add(FindCell(allCells, 6, row));
+        }
+
+        // Длинная рокировка (A)
+        Cell rookLeft = FindCell(allCells, 0, row);
+        Cell betweenLeft1 = FindCell(allCells, 1, row);
+        Cell betweenLeft2 = FindCell(allCells, 2, row);
+        Cell betweenLeft3 = FindCell(allCells, 3, row);
+        if (rookLeft != null && rookLeft.Unit != null &&
+            rookLeft.Unit.Type == PieceType.Rook && !rookLeft.Unit.HasMoved &&
+            betweenLeft1 != null && betweenLeft1.Unit == null &&
+            betweenLeft2 != null && betweenLeft2.Unit == null &&
+            betweenLeft3 != null && betweenLeft3.Unit == null)
+        {
+            moves.Add(FindCell(allCells, 2, row));
         }
     }
 }

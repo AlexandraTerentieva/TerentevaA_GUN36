@@ -29,8 +29,6 @@ public class PlayerController : MonoBehaviour
         }
 
         unit.transform.position = end;
-        unit.CurrentCell = targetCell;
-        targetCell.Unit = unit;
 
         IsBusy = false;
         onComplete?.Invoke();

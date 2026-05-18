@@ -1,5 +1,8 @@
-using UnityEngine;
+Ôªøusing UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 public class BattleController : MonoBehaviour, ISharedData
 {
@@ -12,10 +15,19 @@ public class BattleController : MonoBehaviour, ISharedData
     private Unit selectedUnit = null;
     private List<Cell> currentMoves = new List<Cell>();
     private PlayerController playerController;
+    private PromotionUI promotionUI;
+    private bool gameEnded = false;
 
-    // –Â‡ÎËÁ‡ˆËˇ ISharedData
+    // –ü–µ—Ä–µ–º–µ–Ω–Ω—ã–µ –¥–ª—è –∞–Ω–∏–º–∞—Ü–∏–∏ –ø–µ—Ä–µ–∑–∞–≥—Ä—É–∑–∫–∏
+    private float restartTimer = 0f;
+    private bool isRestarting = false;
+    public Image restartFillImage;
+
     public GameEvent Event { get; set; }
     public Cell Target { get; set; }
+
+    public System.Action<Team> OnTurnChanged;
+    public System.Action<Team> OnGameEnded;
 
     void Awake()
     {
@@ -24,6 +36,7 @@ public class BattleController : MonoBehaviour, ISharedData
         if (playerController == null)
             playerController = gameObject.AddComponent<PlayerController>();
         Event = GameEvent.None;
+        promotionUI = GetComponent<PromotionUI>();
     }
 
     void Start()
@@ -31,28 +44,58 @@ public class BattleController : MonoBehaviour, ISharedData
         FindAllCells();
         FindAllUnits();
         ConnectUnitsToCells();
-        Debug.Log("BattleController: »„‡ Á‡ÔÛ˘ÂÌ‡. ’Ó‰ˇÚ ¡≈À€≈ (White)");
+        Debug.Log("BattleController: –ò–≥—Ä–∞ –∑–∞–ø—É—â–µ–Ω–∞. –•–æ–¥—è—Ç –ë–ï–õ–´–ï (White)");
+        OnTurnChanged?.Invoke(currentTurn);
     }
 
     void Update()
     {
-        // Œ·‡·‡Ú˚‚‡ÂÏ ÒÓ·˚ÚËÂ NewTurn ÓÚ ˜ËÚ‡
-        if (Event == GameEvent.NewTurn)
+        if (gameEnded) return;
+
+        // ESC: —Å–±—Ä–æ—Å –≤—ã–±—Ä–∞–Ω–Ω–æ–π —Ñ–∏–≥—É—Ä—ã
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SwitchTurn();
-            Event = GameEvent.None;
+            if (selectedUnit != null)
+                selectedUnit.SetHighlight(false);
+            selectedUnit = null;
+            ClearHighlights();
+            Debug.Log("ESC: –≤—ã–±–æ—Ä —Å–±—Ä–æ—à–µ–Ω");
         }
 
-        // Œ·‡·‡Ú˚‚‡ÂÏ ÒÓ·˚ÚËÂ PerformAttack ÓÚ ˜ËÚ‡ (ÓÔˆËÓÌ‡Î¸ÌÓ)
-        if (Event == GameEvent.PerformAttack && Target != null && Target.Unit != null)
+        // SPACE: –ø–æ–¥—Ç–≤–µ—Ä–∂–¥–µ–Ω–∏–µ —Ö–æ–¥–∞
+        if (Input.GetKeyDown(KeyCode.Space) && selectedUnit != null && currentMoves.Count > 0)
         {
-            if (Target.Unit.team != currentTurn)
+            MakeMove(selectedUnit, currentMoves[0]);
+            Debug.Log("SPACE: –≤—ã–ø–æ–ª–Ω–µ–Ω –ø–µ—Ä–≤—ã–π –≤–æ–∑–º–æ–∂–Ω—ã–π —Ö–æ–¥");
+        }
+
+        // R: –∞–Ω–∏–º–∞—Ü–∏—è –ø–µ—Ä–µ–∑–∞–≥—Ä—É–∑–∫–∏ —Å —É–¥–µ—Ä–∂–∞–Ω–∏–µ–º
+        if (Input.GetKey(KeyCode.R))
+        {
+            if (!isRestarting)
             {
-                DestroyImmediate(Target.Unit.gameObject);
-                Target.Unit = null;
-                Debug.Log($"[ISharedData] ”·ËÚ‡ ÙË„Û‡ ˜ÂÂÁ Event");
+                isRestarting = true;
+                restartTimer = 0f;
+                if (restartFillImage != null)
+                    restartFillImage.fillAmount = 0f;
             }
-            Event = GameEvent.None;
+
+            restartTimer += Time.deltaTime;
+            if (restartFillImage != null)
+                restartFillImage.fillAmount = restartTimer / 1f;
+
+            if (restartTimer >= 1f)
+            {
+                UnityEngine.SceneManagement.SceneManager.LoadScene(
+                    UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
+                );
+            }
+        }
+        else if (isRestarting)
+        {
+            isRestarting = false;
+            if (restartFillImage != null)
+                restartFillImage.fillAmount = 0f;
         }
     }
 
@@ -70,7 +113,6 @@ public class BattleController : MonoBehaviour, ISharedData
                 cell.Z = int.Parse(parts[2]);
             }
         }
-        Debug.Log($"Õ‡È‰ÂÌÓ ÍÎÂÚÓÍ: {allCells.Count}");
     }
 
     void FindAllUnits()
@@ -78,10 +120,7 @@ public class BattleController : MonoBehaviour, ISharedData
         allUnits.Clear();
         Unit[] units = FindObjectsOfType<Unit>();
         foreach (Unit unit in units)
-        {
             allUnits.Add(unit);
-        }
-        Debug.Log($"Õ‡È‰ÂÌÓ ÙË„Û: {allUnits.Count}");
     }
 
     void ConnectUnitsToCells()
@@ -110,20 +149,22 @@ public class BattleController : MonoBehaviour, ISharedData
 
                 if (unit.team != Team.White && unit.team != Team.Black)
                     unit.team = closestCell.Z < 4 ? Team.White : Team.Black;
-
-                Debug.Log($"—‚ˇÁ¸: {unit.Type} {unit.team} Ì‡ {closestCell.name}");
             }
         }
     }
 
     public void SelectUnit(Unit unit)
     {
+        if (gameEnded) return;
         if (playerController != null && playerController.IsBusy) return;
         if (unit.team != currentTurn) return;
 
+        if (selectedUnit != null)
+            selectedUnit.SetHighlight(false);
+
         selectedUnit = unit;
+        selectedUnit.SetHighlight(true);
         ShowAvailableMoves(unit);
-        Debug.Log($"¬˚·‡Ì‡ ÙË„Û‡ {unit.Type}");
     }
 
     public void MoveToCell(Cell cell)
@@ -142,6 +183,7 @@ public class BattleController : MonoBehaviour, ISharedData
         if (unit.CurrentCell == null) return;
 
         List<Cell> moves = MoveGenerator.GetValidMoves(unit, allCells);
+        moves = moves.Where(cell => IsMoveSafe(unit, cell)).ToList();
 
         foreach (Cell cell in moves)
         {
@@ -149,45 +191,207 @@ public class BattleController : MonoBehaviour, ISharedData
             cell.SetHighlight(true);
         }
 
-        Debug.Log($"Õ‡È‰ÂÌÓ ıÓ‰Ó‚: {currentMoves.Count}");
+        Debug.Log($"–ù–∞–π–¥–µ–Ω–æ –±–µ–∑–æ–ø–∞—Å–Ω—ã—Ö —Ö–æ–¥–æ–≤: {currentMoves.Count}");
+    }
+
+    bool IsMoveSafe(Unit unit, Cell targetCell)
+    {
+        Cell oldCell = unit.CurrentCell;
+        Unit targetUnit = targetCell.Unit;
+
+        oldCell.Unit = null;
+        unit.CurrentCell = targetCell;
+        targetCell.Unit = unit;
+
+        bool isSafe = !IsKingInCheck(unit.team);
+
+        oldCell.Unit = unit;
+        unit.CurrentCell = oldCell;
+        targetCell.Unit = targetUnit;
+
+        return isSafe;
+    }
+
+    bool IsKingInCheck(Team team)
+    {
+        Unit king = allUnits.FirstOrDefault(u => u.Type == PieceType.King && u.team == team);
+        if (king == null) return false;
+
+        foreach (Unit enemy in allUnits)
+        {
+            if (enemy.team == team) continue;
+            List<Cell> enemyMoves = MoveGenerator.GetValidMoves(enemy, allCells);
+            if (enemyMoves.Contains(king.CurrentCell))
+                return true;
+        }
+        return false;
+    }
+
+    bool IsCheckmate(Team team)
+    {
+        List<Unit> friendlyUnits = allUnits.Where(u => u.team == team).ToList();
+
+        foreach (Unit unit in friendlyUnits)
+        {
+            List<Cell> moves = MoveGenerator.GetValidMoves(unit, allCells);
+            foreach (Cell cell in moves)
+            {
+                if (IsMoveSafe(unit, cell))
+                    return false;
+            }
+        }
+        return true;
+    }
+
+    void EndGame(Team winner)
+    {
+        gameEnded = true;
+        Debug.Log($"üéâ –ò–ì–†–ê –û–ö–û–ù–ß–ï–ù–ê! –ü–æ–±–µ–¥–∏–ª–∏ {winner}!");
+        OnGameEnded?.Invoke(winner);
     }
 
     void MakeMove(Unit unit, Cell targetCell)
     {
         Cell oldCell = unit.CurrentCell;
+        bool isCastling = false;
+        Cell rookOldCell = null;
+        Cell rookNewCell = null;
+        Unit rook = null;
 
-        // Œ·ÌÓ‚ÎˇÂÏ ISharedData
-        Event = GameEvent.PerformMove;
-        Target = targetCell;
-
-        if (targetCell.Unit != null && targetCell.Unit.team != unit.team)
+        if (unit.Type == PieceType.King && Mathf.Abs(targetCell.X - unit.CurrentCell.X) == 2)
         {
-            Event = GameEvent.PerformAttack;
-            Target = targetCell;
-            Debug.Log($"[ISharedData] ”·ËÚ‡ ÙË„Û‡ {targetCell.Unit.Type}");
-            Destroy(targetCell.Unit.gameObject);
+            isCastling = true;
+            int row = (unit.team == Team.White) ? 0 : 7;
+            int rookX = targetCell.X > unit.CurrentCell.X ? 7 : 0;
+            int rookNewX = targetCell.X > unit.CurrentCell.X ? 5 : 3;
+
+            rookOldCell = FindCell(rookX, row);
+            rookNewCell = FindCell(rookNewX, row);
+
+            if (rookOldCell != null && rookOldCell.Unit != null && rookOldCell.Unit.Type == PieceType.Rook)
+                rook = rookOldCell.Unit;
         }
 
-        playerController.ExecuteMove(unit, targetCell, () =>
+        bool killedEnemyKing = false;
+        if (targetCell.Unit != null && targetCell.Unit.team != unit.team)
         {
-            oldCell.Unit = null;
-            unit.HasMoved = true;
+            if (targetCell.Unit.Type == PieceType.King)
+                killedEnemyKing = true;
+            Destroy(targetCell.Unit.gameObject);
+            allUnits.Remove(targetCell.Unit);
+        }
 
-            if (unit.Type == PieceType.Pawn && (targetCell.Z == 0 || targetCell.Z == 7))
-                unit.Type = PieceType.Queen;
+        if (killedEnemyKing)
+        {
+            EndGame(unit.team);
+            return;
+        }
 
-            SwitchTurn();
-        });
+        if (isCastling && rook != null)
+        {
+            StartCoroutine(CastlingRoutine(unit, oldCell, targetCell, rook, rookOldCell, rookNewCell));
+        }
+        else
+        {
+            playerController.ExecuteMove(unit, targetCell, () =>
+            {
+                oldCell.Unit = null;
+                unit.CurrentCell = targetCell;
+                targetCell.Unit = unit;
+                unit.HasMoved = true;
 
+                if (unit.Type == PieceType.Pawn && (targetCell.Z == 0 || targetCell.Z == 7))
+                {
+                    if (promotionUI != null)
+                        promotionUI.Show(unit, targetCell, (selectedType) => unit.Type = selectedType);
+                    else
+                        unit.Type = PieceType.Queen;
+                }
+
+                if (selectedUnit != null)
+                    selectedUnit.SetHighlight(false);
+                selectedUnit = null;
+                ClearHighlights();
+
+                Team enemyTeam = (currentTurn == Team.White) ? Team.Black : Team.White;
+                if (IsKingInCheck(enemyTeam))
+                {
+                    Debug.Log($"{enemyTeam} –∫–æ—Ä–æ–ª—å –ø–æ–¥ —à–∞—Ö–æ–º!");
+                    if (IsCheckmate(enemyTeam))
+                    {
+                        EndGame(currentTurn);
+                        return;
+                    }
+                }
+
+                SwitchTurn();
+            });
+        }
+    }
+
+    IEnumerator CastlingRoutine(Unit king, Cell oldKingCell, Cell newKingCell, Unit rook, Cell oldRookCell, Cell newRookCell)
+    {
+        yield return StartCoroutine(MoveRoutine(king, newKingCell));
+        oldKingCell.Unit = null;
+        king.CurrentCell = newKingCell;
+        newKingCell.Unit = king;
+        king.HasMoved = true;
+
+        yield return StartCoroutine(MoveRoutine(rook, newRookCell));
+        oldRookCell.Unit = null;
+        rook.CurrentCell = newRookCell;
+        newRookCell.Unit = rook;
+        rook.HasMoved = true;
+
+        Debug.Log("–†–æ–∫–∏—Ä–æ–≤–∫–∞ –≤—ã–ø–æ–ª–Ω–µ–Ω–∞!");
+
+        Team enemyTeam = (currentTurn == Team.White) ? Team.Black : Team.White;
+        if (IsKingInCheck(enemyTeam))
+        {
+            Debug.Log($"{enemyTeam} –∫–æ—Ä–æ–ª—å –ø–æ–¥ —à–∞—Ö–æ–º!");
+            if (IsCheckmate(enemyTeam))
+            {
+                EndGame(currentTurn);
+                yield break;
+            }
+        }
+
+        if (selectedUnit != null)
+            selectedUnit.SetHighlight(false);
         selectedUnit = null;
         ClearHighlights();
+        SwitchTurn();
+    }
+
+    IEnumerator MoveRoutine(Unit unit, Cell targetCell)
+    {
+        Vector3 start = unit.transform.position;
+        Vector3 end = targetCell.transform.position + Vector3.up * 0.5f;
+        float t = 0;
+        float speed = 5f;
+
+        while (t < 1)
+        {
+            t += Time.deltaTime * speed;
+            unit.transform.position = Vector3.Lerp(start, end, t);
+            yield return null;
+        }
+
+        unit.transform.position = end;
+    }
+
+    Cell FindCell(int x, int z)
+    {
+        foreach (Cell cell in allCells)
+            if (cell.X == x && cell.Z == z) return cell;
+        return null;
     }
 
     public void SwitchTurn()
     {
         currentTurn = (currentTurn == Team.White) ? Team.Black : Team.White;
-        Event = GameEvent.NewTurn;
-        Debug.Log($"[ISharedData] NewTurn! “ÂÔÂ¸ ıÓ‰ˇÚ: {currentTurn}");
+        Debug.Log($"–¢–µ–ø–µ—Ä—å —Ö–æ–¥—è—Ç: {currentTurn}");
+        OnTurnChanged?.Invoke(currentTurn);
     }
 
     void ClearHighlights()

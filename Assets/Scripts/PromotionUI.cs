@@ -1,40 +1,38 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System;
 
 public class PromotionUI : MonoBehaviour
 {
-    [SerializeField] private GameObject promotionPanel;
-    [SerializeField] private Button queenButton;
-    [SerializeField] private Button rookButton;
-    [SerializeField] private Button bishopButton;
-    [SerializeField] private Button knightButton;
+    public GameObject panel;
+    public Button queenButton;
+    public Button rookButton;
+    public Button bishopButton;
+    public Button knightButton;
 
     private Unit currentPawn;
-    private Cell targetCell;
-    private Action<PieceType> onPieceSelected; // ← исправлено
+    private Cell currentCell;
+    private System.Action<PieceType> onComplete;
 
-    private void Start()
+    void Start()
     {
-        promotionPanel.SetActive(false);
-
         queenButton.onClick.AddListener(() => SelectPiece(PieceType.Queen));
         rookButton.onClick.AddListener(() => SelectPiece(PieceType.Rook));
         bishopButton.onClick.AddListener(() => SelectPiece(PieceType.Bishop));
         knightButton.onClick.AddListener(() => SelectPiece(PieceType.Knight));
+        panel.SetActive(false);
     }
 
-    public void Show(Unit pawn, Cell cell, Action<PieceType> callback)
+    public void Show(Unit pawn, Cell cell, System.Action<PieceType> callback)
     {
         currentPawn = pawn;
-        targetCell = cell;
-        onPieceSelected = callback;
-        promotionPanel.SetActive(true);
+        currentCell = cell;
+        onComplete = callback;
+        panel.SetActive(true);
     }
 
-    private void SelectPiece(PieceType type) // ← исправлено
+    void SelectPiece(PieceType type)
     {
-        promotionPanel.SetActive(false);
-        onPieceSelected?.Invoke(type);
+        panel.SetActive(false);
+        onComplete?.Invoke(type);
     }
 }
