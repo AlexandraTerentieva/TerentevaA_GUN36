@@ -3,13 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Pin
+  tags: []
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Ground
+  - Trash
   - Water
   - UI
   - 
@@ -41,7 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Pin
-    uniqueID: 3240205601
     locked: 0
