@@ -1,52 +1,64 @@
 using UnityEngine;
-using UnityEngine.UI; // если используешь UI для очков
+using UnityEngine.UI;
+using System.Collections;
+using System.Collections.Generic;
 
 public class BowlingController : MonoBehaviour
 {
     [Header("Мяч")]
-    public GameObject ballPrefab;      // префаб мяча
-    public Transform spawnPoint;       // точка броска
-    public float throwForce = 20f;     // сила броска
+    [SerializeField] private GameObject ballPrefab;
+    [SerializeField] private Transform spawnPoint;
+    [SerializeField] private float throwForce = 20f;
 
     [Header("Кегли")]
-    public GameObject[] pins;          // все кегли (с тегом Pin)
+    [SerializeField] private Transform[] pinPositions;
 
     [Header("UI")]
-    public Text scoreText;             // текст для очков
+    [SerializeField] private Text scoreText;
 
     private GameObject currentBall;
+    private List<GameObject> pins = new List<GameObject>();
+    private List<Vector3> initialPinPositions = new List<Vector3>();
+    private List<Quaternion> initialPinRotations = new List<Quaternion>();
+
     private int currentScore = 0;
-    private int throwCount = 0;        // 1 или 2 бросок в фрейме
+    private int throwCount = 0;
     private bool hasThrown = false;
 
     void Start()
     {
-        // Находим все кегли по тегу
-        pins = GameObject.FindGameObjectsWithTag("Pin");
+        // Находим все кегли по тегу Pin
+        GameObject[] foundPins = GameObject.FindGameObjectsWithTag("Pin");
+        pins = new List<GameObject>(foundPins);
+
+        // Сохраняем начальные позиции и повороты
+        foreach (GameObject pin in pins)
+        {
+            initialPinPositions.Add(pin.transform.position);
+            initialPinRotations.Add(pin.transform.rotation);
+        }
+
         SpawnBall();
         UpdateScoreUI();
     }
 
     void Update()
     {
-        // Бросок по клику мыши
         if (Input.GetMouseButtonDown(0) && !hasThrown && currentBall != null)
         {
             Rigidbody rb = currentBall.GetComponent<Rigidbody>();
             if (rb != null)
             {
                 rb.isKinematic = false;
-                // Бросок вперёд от камеры
                 Vector3 direction = Camera.main.transform.forward;
                 direction.y = 0;
                 rb.AddForce(direction * throwForce, ForceMode.Impulse);
                 hasThrown = true;
                 throwCount++;
-                Invoke(nameof(CheckPins), 3f);
+                StartCoroutine(CheckPinsAfterDelay(3f));
             }
         }
 
-        // Сброс фрейма (новый подход) — по пробелу
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ResetFrame();
@@ -61,60 +73,71 @@ public class BowlingController : MonoBehaviour
         if (rb != null)
         {
             rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
         }
         hasThrown = false;
     }
 
-    void CheckPins()
+    IEnumerator CheckPinsAfterDelay(float delay)
     {
-        int fallen = CountFallenPins();
-        int points = CalculatePoints(fallen);
-        currentScore += points;
-        UpdateScoreUI();
-
-        Debug.Log($"Сбито: {fallen}, очков за бросок: {points}, всего: {currentScore}");
-
-        // Автоматический сброс через 2 секунды
-        Invoke(nameof(ResetFrame), 2f);
+        yield return new WaitForSeconds(delay);
+        CountFallenPins();
     }
 
-    int CountFallenPins()
+    void CountFallenPins()
     {
         int fallen = 0;
         foreach (GameObject pin in pins)
         {
             if (pin == null) continue;
-            // Кегля упала, если её верх направлен вниз
-            if (pin.transform.up.y < 0.5f)
+            if (Vector3.Angle(pin.transform.up, Vector3.up) > 45f)
                 fallen++;
         }
-        return fallen;
+
+        int points = CalculatePoints(fallen);
+        currentScore += points;
+        UpdateScoreUI();
+
+        Debug.Log($"Сбито: {fallen} из {pins.Count}, очков за бросок: {points}, всего: {currentScore}");
+
+        Invoke(nameof(ResetFrame), 2f);
     }
 
     int CalculatePoints(int fallen)
     {
         if (fallen == 10 && throwCount == 1)
-            return 30; // Страйк: 10 + 20 бонусных
+            return 30;
         else if (fallen == 10 && throwCount == 2)
-            return 20; // Спар: 10 + 10 бонусных
+            return 20;
         else
-            return fallen; // 1 очко за каждую сбитую
+            return fallen;
     }
 
     void ResetFrame()
     {
         throwCount = 0;
-        SpawnBall();
         ResetPins();
+        SpawnBall();
     }
 
     void ResetPins()
     {
-        // Здесь нужно пересоздать кегли или вернуть их в исходное положение
-        // Можно просто перезагрузить сцену или использовать готовый префаб расстановки
-        Debug.Log("Кегли сброшены (нужно реализовать возврат позиций)");
+        for (int i = 0; i < pins.Count; i++)
+        {
+            if (pins[i] == null) continue;
+
+            pins[i].transform.position = initialPinPositions[i];
+            pins[i].transform.rotation = initialPinRotations[i];
+
+            Rigidbody rb = pins[i].GetComponent<Rigidbody>();
+            if (rb != null)
+            {
+                bool wasKinematic = rb.isKinematic;
+                rb.isKinematic = false;
+                rb.velocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                rb.isKinematic = wasKinematic;
+            }
+        }
     }
 
     void UpdateScoreUI()
