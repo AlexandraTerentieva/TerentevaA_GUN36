@@ -2,52 +2,71 @@ using UnityEngine;
 
 public class EnemyVision : MonoBehaviour
 {
-    [Header("Настройки обзора")]
-    public float viewRadius = 5f;
-    public Vector3 viewCenterOffset = new Vector3(0, 1, 0);
+    [SerializeField] private float viewRadius = 5f;
+    [SerializeField] private float viewAngle = 90f;
+    [SerializeField] private Vector3 viewCenterOffset = new Vector3(0, 1, 0);
 
     private Transform enemyTransform;
+    private Transform playerTransform;
 
     void Start()
     {
         enemyTransform = transform;
+
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null) playerTransform = player.transform;
     }
 
-    // Центр обзора в мировых координатах
     public Vector3 GetViewCenter()
     {
         return enemyTransform.position + viewCenterOffset;
     }
 
-    // Проверка, видит ли цель
     public bool IsTargetInView(Vector3 targetPosition)
     {
-        float distance = Vector3.Distance(GetViewCenter(), targetPosition);
-        return distance <= viewRadius;
+        Vector3 center = GetViewCenter();
+        Vector3 directionToTarget = targetPosition - center;
+
+        float distance = directionToTarget.magnitude;
+        if (distance > viewRadius) return false;
+
+        float angle = Vector3.Angle(enemyTransform.forward, directionToTarget);
+        return angle <= viewAngle * 0.5f;
     }
 
-    // Обнаружение игрока (логика)
     void Update()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null && IsTargetInView(player.transform.position))
+        if (playerTransform != null && IsTargetInView(playerTransform.position))
         {
             Debug.Log(gameObject.name + " видит игрока!");
         }
     }
 
-    // Визуализация Gizmo
     void OnDrawGizmosSelected()
     {
-        if (enemyTransform == null)
-            enemyTransform = transform;
+        if (enemyTransform == null) enemyTransform = transform;
 
         Vector3 center = GetViewCenter();
+        Vector3 forward = enemyTransform.forward;
 
+        // Полная окружность как основа
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(center, viewRadius);
 
-        Gizmos.color = Color.red;
-        Gizmos.DrawSphere(center, 0.2f);
+        // Сектор обзора (угол)
+        Gizmos.color = Color.green;
+        Vector3 leftBoundary = Quaternion.Euler(0, -viewAngle * 0.5f, 0) * forward * viewRadius;
+        Vector3 rightBoundary = Quaternion.Euler(0, viewAngle * 0.5f, 0) * forward * viewRadius;
+
+        Gizmos.DrawLine(center, center + leftBoundary);
+        Gizmos.DrawLine(center, center + rightBoundary);
+
+        // Дуга сектора
+        float angleStep = 5f;
+        for (float angle = -viewAngle * 0.5f; angle <= viewAngle * 0.5f; angle += angleStep)
+        {
+            Vector3 dir = Quaternion.Euler(0, angle, 0) * forward * viewRadius;
+            Gizmos.DrawLine(center + dir, center + Quaternion.Euler(0, angle + angleStep, 0) * forward * viewRadius);
+        }
     }
 }
