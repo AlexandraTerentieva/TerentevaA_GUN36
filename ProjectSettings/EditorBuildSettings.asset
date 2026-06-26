@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scene/GameScene.unity
     guid: cfc99bc16dbbfdd4e8d00cace8c5506d
+  - enabled: 1
+    path: Assets/ai_10_health_ammo_pickups/Assets/Scenes/scene_sandbox.unity
+    guid: e153f8fc20dad824fbae1b13321ab3f5
   m_configObjects: {}
