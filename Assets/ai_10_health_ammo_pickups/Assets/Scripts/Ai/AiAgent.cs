@@ -5,6 +5,7 @@ public class AiAgent : MonoBehaviour
 {
     public AiStateId initialState;
     public AiAgentConfig config;
+    public bool isMelee = false;
 
     [HideInInspector] public AiStateMachine stateMachine;
     [HideInInspector] public NavMeshAgent navMeshAgent;
@@ -30,10 +31,25 @@ public class AiAgent : MonoBehaviour
 
         stateMachine = new AiStateMachine(this);
         stateMachine.RegisterState(new AiIdleState());
-        stateMachine.RegisterState(new AiFindWeaponState());
+
+        // 👇 ТОЛЬКО НЕ БЛИЖНИКИ ИЩУТ ОРУЖИЕ
+        if (!isMelee)
+        {
+            stateMachine.RegisterState(new AiFindWeaponState());
+        }
+
         stateMachine.RegisterState(new AiFindTargetState());
         stateMachine.RegisterState(new AiChasePlayerState());
-        stateMachine.RegisterState(new AiAttackTargetState());
+
+        if (isMelee)
+        {
+            stateMachine.RegisterState(new AiMeleeAttackState());
+        }
+        else
+        {
+            stateMachine.RegisterState(new AiAttackTargetState());
+        }
+
         stateMachine.RegisterState(new AiDeathState());
         stateMachine.RegisterState(new AiFindHealthState());
         stateMachine.RegisterState(new AiFindAmmoState());
