@@ -69,6 +69,18 @@ namespace Netologia.TowerDefence
             var clampLevel = Mathf.Clamp(_level + 1, 0, Progress.Length - 1);
             _level = clampLevel;
             UpdateRangeBackground();
+
+            // ============================================================
+            // ДОБАВЛЕНО: вызов спавна лучников при улучшении казармы
+            // ============================================================
+            if (AttackElemental == ElementalType.Barracks)
+            {
+                BarracksSpawner spawner = GetComponent<BarracksSpawner>();
+                if (spawner != null)
+                {
+                    spawner.OnUpgrade();
+                }
+            }
         }
 
         public bool DecrementAttackReload(float delta)
@@ -114,7 +126,9 @@ namespace Netologia.TowerDefence
             }
         }
 
-        // ===== НОВЫЙ МЕТОД: вызывать при получении из пула =====
+        // ============================================================
+        // ДОБАВЛЕНО: инициализация башни при получении из пула
+        // ============================================================
         public void InitializeFromPool()
         {
             if (_level < 0)
@@ -124,7 +138,6 @@ namespace Netologia.TowerDefence
                 UpdateRangeBackground();
             }
         }
-        // ===== КОНЕЦ НОВОГО МЕТОДА =====
 
         private void UpdateRangeBackground()
             => _rangeBack.transform.localScale = Vector3.one * 0.67f * Range;
