@@ -1,20 +1,33 @@
 ﻿using Netologia.Behaviours;
 using UnityEngine;
+using Netologia.TowerDefence.Behaviors; // ← ДОБАВЛЕНО
 
 namespace Netologia.TowerDefence
 {
+    /// <summary>
+    /// Снаряд. Летит в цель, наносит урон, начисляет золото.
+    /// </summary>
     public class Projectile : MonoBehaviour, IPoolElement<Projectile>
     {
+        // ============================================================
+        //  ПРИВАТНЫЕ ПОЛЯ
+        // ============================================================
+
         private float _damage;
         private Vector3? _endPosition;
         private Unit _target;
-
         private ElementalType _elementalType;
+
+        // ============================================================
+        //  ПУБЛИЧНЫЕ ПОЛЯ
+        // ============================================================
 
         [field: SerializeField]
         public ParticleSystem HitEffect { get; private set; }
+
         [field: SerializeField]
         public AudioClip HitSound { get; private set; }
+
         [field: SerializeField]
         public float MoveSpeed { get; private set; }
 
@@ -27,21 +40,43 @@ namespace Netologia.TowerDefence
         public Vector3 TargetPosition => _endPosition ?? _target.transform.position;
         public int TargetID { get; private set; } = -1;
 
+        // ============================================================
+        //  МЕТОДЫ
+        // ============================================================
+
         public void DealDamage()
         {
             if (_endPosition.HasValue) return;
             if (_target == null) return;
-            if (_target.CurrentHealth <= 0) return;
 
-            Debug.Log($"Нанесён урон {_damage} врагу {_target.name}. Здоровье: {_target.CurrentHealth} -> {_target.CurrentHealth - _damage}");
+            Debug.Log($"Снаряд нанёс {_damage} урона врагу {_target.name}");
 
+            // Отнимаем здоровье
             _target.CurrentHealth -= _damage;
-            _target.TryAddEffect(TimeManager.Time, _elementalType);
+            Debug.Log($"Здоровье врага стало: {_target.CurrentHealth}");
 
+            // Если враг умер — начисляем золото
             if (_target.CurrentHealth <= 0)
             {
-                Debug.Log($"Враг {_target.name} убит!");
+                Debug.Log("Враг УМЕР!");
+
+                // Начисляем золото
+                if (Director.Instance != null)
+                {
+                    Director.Instance.AddMoney(_target.Stats.Cost);
+                    Debug.Log($"Золото +{_target.Stats.Cost}");
+                }
+                else
+                {
+                    Debug.LogWarning("Director.Instance == null! Золото не начислено.");
+                }
+
+                // Удаляем врага
+                Destroy(_target.gameObject);
             }
+
+            // Эффект (огонь/лёд)
+            _target.TryAddEffect(TimeManager.Time, _elementalType);
         }
 
         public void ResetTarget()
@@ -49,16 +84,9 @@ namespace Netologia.TowerDefence
 
         public void PrepareData(Vector3 position, Unit target, float damage, ElementalType type)
         {
-            if (target == null)
-            {
-                Debug.LogError("PrepareData: target == null!");
-                return;
-            }
-
             transform.position = position;
             (_target, _damage, _elementalType, _endPosition) = (target, damage, type, null);
             TargetID = target.ID;
-            Debug.Log($"Снаряд создан! Цель: {target.name}, Урон: {damage}");
         }
 
         private void Awake()

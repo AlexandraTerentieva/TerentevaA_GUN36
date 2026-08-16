@@ -6,56 +6,88 @@ using UnityEngine;
 
 namespace Netologia.Systems
 {
+    /// <summary>
+    /// Управляет всеми башнями на сцене.
+    /// </summary>
     public class TowerSystem : GameObjectPoolContainer<Tower>, Director.IManualUpdate
     {
-        private UnitSystem _units;
-        private ProjectileSystem _projectiles;
+        // Системы, которые нужны для работы
+        private UnitSystem _units;              // Чтобы искать врагов
+        private ProjectileSystem _projectiles;  // Чтобы создавать снаряды
 
+        /// <summary>
+        /// Вызывается каждый кадр из Director.
+        /// </summary>
         public void ManualUpdate()
         {
+            // Проходим по всем башням
             foreach (var pair in this)
             {
                 foreach (var tower in pair)
                 {
                     if (tower == null || !tower.gameObject.activeSelf) continue;
 
-                    // Проверяем перезарядку
+                    // Проверяем, не перезаряжается ли башня
                     if (!tower.DecrementAttackReload(Time.deltaTime)) continue;
 
-                    // КАЖДЫЙ КАДР ИЩЕМ ЦЕЛЬ ЗАНОВО, ИГНОРИРУЯ СТАРУЮ
-                    tower.Target = FindClosestEnemyInRange(tower);
-                    if (tower.Target == null) continue;
+                    // Если у башни нет цели, или цель умерла/вышла из радиуса — ищем новую
+                    if (tower.Target == null || !tower.Target.gameObject.activeSelf || !IsTargetInRange(tower))
+                    {
+                        tower.Target = FindTargetInRange(tower);
+                        if (tower.Target == null) continue;
+                    }
 
+                    // Если цель есть — стреляем
                     Shoot(tower);
                 }
             }
         }
 
-        private Unit FindClosestEnemyInRange(Tower tower)
+        /// <summary>
+        /// Проверяет, находится ли текущая цель башни в радиусе.
+        /// </summary>
+        private bool IsTargetInRange(Tower tower)
+        {
+            if (tower.Target == null) return false;
+            float distance = Vector3.Distance(tower.transform.position, tower.Target.transform.position);
+            return distance <= tower.Range;
+        }
+
+        /// <summary>
+        /// Ищет ближайшего врага, который находится строго в радиусе башни.
+        /// Если врагов в радиусе нет — возвращает null.
+        /// </summary>
+        private Unit FindTargetInRange(Tower tower)
         {
             float range = tower.Range;
             Vector3 position = tower.transform.position;
             Unit closest = null;
-            float closestDist = range;
+            float closestDist = float.MaxValue;
 
-            Unit[] allUnits = FindObjectsOfType<Unit>();
-
-            foreach (Unit unit in allUnits)
+            // Перебираем всех активных врагов
+            foreach (var pair in _units)
             {
-                if (unit == null || !unit.gameObject.activeSelf) continue;
-
-                float dist = Vector3.Distance(unit.transform.position, position);
-
-                if (dist <= range && dist < closestDist)
+                foreach (var unit in pair)
                 {
-                    closestDist = dist;
-                    closest = unit;
+                    if (unit == null || !unit.gameObject.activeSelf) continue;
+
+                    float dist = Vector3.Distance(unit.transform.position, position);
+
+                    // Враг должен быть строго в радиусе
+                    if (dist <= range && dist < closestDist)
+                    {
+                        closestDist = dist;
+                        closest = unit;
+                    }
                 }
             }
 
             return closest;
         }
 
+        /// <summary>
+        /// Создаёт снаряд и отправляет его в цель.
+        /// </summary>
         private void Shoot(Tower tower)
         {
             Projectile projectile = _projectiles[tower.Projectile].Get;
@@ -68,6 +100,9 @@ namespace Netologia.Systems
             tower.Attack();
         }
 
+        /// <summary>
+        /// Когда враг умирает — сбрасываем цель у башен, которые на него целились.
+        /// </summary>
         public void OnDespawnUnit(int unitID)
         {
             foreach (var pair in this)

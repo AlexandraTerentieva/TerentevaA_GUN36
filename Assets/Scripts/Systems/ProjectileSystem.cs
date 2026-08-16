@@ -8,13 +8,14 @@ namespace Netologia.Systems
 {
     public class ProjectileSystem : GameObjectPoolContainer<Projectile>, Director.IManualUpdate
     {
-        private EffectSystem _effects;      //injected
+        private EffectSystem _effects;
 
         [SerializeField, Min(0.01f)]
-        private float _hitDistance = 0.3f;
+        private float _hitDistance = 1.5f;
 
         public void ManualUpdate()
         {
+            // Движение снарядов
             foreach (var pair in this)
             {
                 foreach (var projectile in pair)
@@ -22,7 +23,6 @@ namespace Netologia.Systems
                     if (projectile == null || !projectile.gameObject.activeSelf) continue;
 
                     Vector3 targetPos = projectile.TargetPosition;
-
                     projectile.transform.position = Vector3.MoveTowards(
                         projectile.transform.position,
                         targetPos,
@@ -63,7 +63,7 @@ namespace Netologia.Systems
         [Inject]
         private void Construct(EffectSystem effects)
         {
-            (_effects) = (effects);
+            _effects = effects;
             _hitDistance *= _hitDistance;
         }
     }
