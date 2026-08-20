@@ -1,4 +1,5 @@
 using UnityEngine;
+using Netologia.Systems;
 
 /// <summary>
 /// Лучник. Бегает к врагам, стреляет, перезаряжается.
@@ -10,11 +11,11 @@ public class ArcherBehaviour : MonoBehaviour
     // ============================================================
 
     [Header("Настройки")]
-    public float moveSpeed = 3f;          // Скорость бега к врагу
-    public float attackRange = 5f;        // Дистанция, с которой начинает стрелять
-    public float fireRate = 1f;           // Задержка между выстрелами
-    public int damage = 5;                // Урон за один выстрел
-    public GameObject arrowPrefab;        // Префаб стрелы (перетащить в инспекторе)
+    [SerializeField] private float moveSpeed = 3f;          // Скорость бега к врагу
+    [SerializeField] private float attackRange = 5f;        // Дистанция, с которой начинает стрелять
+    [SerializeField] private float fireRate = 1f;           // Задержка между выстрелами
+    [SerializeField] private int damage = 5;                // Урон за один выстрел
+    [SerializeField] private GameObject arrowPrefab;        // Префаб стрелы
 
     // ============================================================
     //  ПРИВАТНЫЕ ПЕРЕМЕННЫЕ
@@ -22,6 +23,21 @@ public class ArcherBehaviour : MonoBehaviour
 
     private Transform target;             // Текущая цель (ближайший враг)
     private float cooldown;               // Оставшееся время перезарядки
+    private UnitSystem _unitSystem;       // Ссылка на систему юнитов
+
+    // ============================================================
+    //  СТАРТ
+    // ============================================================
+
+    void Start()
+    {
+        // Находим UnitSystem на сцене
+        _unitSystem = FindObjectOfType<UnitSystem>();
+        if (_unitSystem == null)
+        {
+            Debug.LogError("ArcherBehaviour: UnitSystem не найден!");
+        }
+    }
 
     // ============================================================
     //  ЛОГИКА ПОВЕДЕНИЯ (вызывается каждый кадр)
@@ -57,28 +73,33 @@ public class ArcherBehaviour : MonoBehaviour
     }
 
     // ============================================================
-    //  ПОИСК БЛИЖАЙШЕГО ВРАГА
+    //  ПОИСК БЛИЖАЙШЕГО ВРАГА (через UnitSystem)
     // ============================================================
 
     /// <summary>
-    /// Находит ближайшего врага с тегом "Enemy".
+    /// Находит ближайшего врага через UnitSystem.
+    /// Оптимизировано: нет FindGameObjectsWithTag.
     /// </summary>
-    void FindTarget()
+    private void FindTarget()
     {
-        // Находим всех врагов на сцене
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        if (_unitSystem == null) return;
 
         float closestDist = Mathf.Infinity;
         target = null;
 
-        // Перебираем всех врагов, ищем самого близкого
-        foreach (GameObject enemy in enemies)
+        // Перебираем всех врагов через UnitSystem
+        foreach (var pair in _unitSystem)
         {
-            float dist = Vector3.Distance(transform.position, enemy.transform.position);
-            if (dist < closestDist)
+            foreach (var unit in pair)
             {
-                closestDist = dist;
-                target = enemy.transform;
+                if (unit == null || !unit.gameObject.activeSelf) continue;
+
+                float dist = Vector3.SqrMagnitude(unit.transform.position - transform.position);
+                if (dist < closestDist)
+                {
+                    closestDist = dist;
+                    target = unit.transform;
+                }
             }
         }
     }
@@ -90,7 +111,7 @@ public class ArcherBehaviour : MonoBehaviour
     /// <summary>
     /// Создаёт стрелу и отправляет её в цель.
     /// </summary>
-    void Shoot()
+    private void Shoot()
     {
         if (arrowPrefab == null || target == null) return;
 
@@ -102,6 +123,10 @@ public class ArcherBehaviour : MonoBehaviour
         if (proj != null)
         {
             proj.Initialize(target, damage);
+        }
+        else
+        {
+            Debug.LogError("ArcherBehaviour: у стрелы нет компонента ArrowProjectile!");
         }
     }
 }

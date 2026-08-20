@@ -61,7 +61,7 @@ namespace Netologia.Systems
 
         /// <summary>
         /// Вызывается каждый кадр из Director.
-        /// Двигает врагов по пути, проверяет конец пути.
+        /// Двигает врагов по пути, проверяет конец пути и смерть.
         /// </summary>
         public void ManualUpdate()
         {
@@ -70,6 +70,15 @@ namespace Netologia.Systems
                 foreach (var unit in pair)
                 {
                     if (unit == null || !unit.gameObject.activeSelf) continue;
+
+                    // ============================================================
+                    // ✅ ПРОВЕРКА СМЕРТИ ВРАГА (ЧИНИТ ОШИБКУ)
+                    // ============================================================
+                    if (unit.CurrentHealth <= 0)
+                    {
+                        DespawnUnit(unit);
+                        continue; // пропускаем движение
+                    }
 
                     // Если путь не задан — пропускаем
                     Vector3[] path = _path;
@@ -99,13 +108,9 @@ namespace Netologia.Systems
                         // Если враг дошёл до конца пути
                         if (unit.PathIndex >= path.Length)
                         {
-                            // ============================================================
                             // ВРАГ ДОШЁЛ ДО КОНЦА → НАНОСИМ УРОН ИГРОКУ
-                            // БЕЗ ЗОЛОТА!
-                            // ============================================================
-                            _director.AddPlayerDamage(1);          // Урон игроку
-                            this[unit.Ref].ReturnElement(unit.ID); // Удаляем врага
-                            // ============================================================
+                            _director.AddPlayerDamage(1);
+                            this[unit.Ref].ReturnElement(unit.ID);
                         }
                     }
                 }
@@ -119,9 +124,13 @@ namespace Netologia.Systems
         /// <summary>
         /// Удаляет врага при смерти от башни.
         /// Начисляет золото, эффекты и звуки.
+        /// Публичный метод — вызывается из Projectile и других систем.
         /// </summary>
-        private void DespawnUnit(Unit unit, in Vector3 position)
+        public void DespawnUnit(Unit unit)
         {
+            if (unit == null) return;
+            Vector3 position = unit.transform.position;
+
             // Эффект смерти
             if (unit.HasEffect)
             {
@@ -138,6 +147,9 @@ namespace Netologia.Systems
 
             // Начисляем золото
             _director.AddMoney(unit.Stats.Cost);
+
+            // Оповещаем подписчиков (TowerSystem, ProjectileSystem)
+            OnDespawnUnitHandler?.Invoke(unit.ID);
 
             // Возвращаем врага в пул
             this[unit.Ref].ReturnElement(unit.ID);

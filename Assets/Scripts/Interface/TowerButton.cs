@@ -19,7 +19,7 @@ namespace Netologia.TowerDefence.Interface
         public Button Button { get; private set; }
 
         // ============================================================
-        // ДОБАВЛЕНО: тип башни (Physic, Fire, Ice, Barracks)
+        // Тип башни (Physic, Fire, Ice, Barracks)
         // Нужно для связи кнопки с конкретной башней в BuyTowerPanel
         // ============================================================
         [field: SerializeField]

@@ -8,6 +8,7 @@ namespace Netologia.Systems
 {
     /// <summary>
     /// Управляет всеми башнями на сцене.
+    /// Отвечает за поиск целей, стрельбу и перезарядку.
     /// </summary>
     public class TowerSystem : GameObjectPoolContainer<Tower>, Director.IManualUpdate
     {
@@ -17,6 +18,7 @@ namespace Netologia.Systems
 
         /// <summary>
         /// Вызывается каждый кадр из Director.
+        /// Обновляет состояние всех башен.
         /// </summary>
         public void ManualUpdate()
         {
@@ -87,16 +89,26 @@ namespace Netologia.Systems
 
         /// <summary>
         /// Создаёт снаряд и отправляет его в цель.
+        /// Если у башни нет снаряда (Projectile == null) — выходим без ошибки.
+        /// Это нужно для казармы, которая не стреляет, но является башней.
         /// </summary>
         private void Shoot(Tower tower)
         {
+            // ✅ ЗАЩИТА ОТ ОШИБКИ: если снаряд отсутствует — пропускаем выстрел
+            if (tower == null || tower.Projectile == null) return;
+
+            // Получаем снаряд из пула
             Projectile projectile = _projectiles[tower.Projectile].Get;
+
+            // Настраиваем снаряд
             projectile.PrepareData(
-                tower.transform.position,
-                tower.Target,
-                tower.Damage,
-                tower.AttackElemental
+                tower.transform.position,  // Позиция выстрела
+                tower.Target,              // Цель
+                tower.Damage,              // Урон
+                tower.AttackElemental      // Тип урона (физический, огонь, лёд)
             );
+
+            // Вызываем событие атаки у башни (эффекты, звуки)
             tower.Attack();
         }
 
@@ -111,6 +123,9 @@ namespace Netologia.Systems
                         tower.Target = null;
         }
 
+        /// <summary>
+        /// Zenject-инъекция зависимостей.
+        /// </summary>
         [Inject]
         private void Construct(UnitSystem units, ProjectileSystem projectiles)
         {
