@@ -1,0 +1,1590 @@
+Using pre-set license
+Built from '2022.3/staging' branch; Version is '2022.3.38f1 (c5d5a7410213) revision 12965287'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10  (10.0.19045) 64bit Professional' Language: 'ru' Physical Memory: 16277 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 1
+
+COMMAND LINE ARGUMENTS:
+E:\Unity 2022.3.38f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/TerentevaA_GUN36
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+64644
+Successfully changed project path to: D:/TerentevaA_GUN36
+D:/TerentevaA_GUN36
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Player connection [14544]  Target information:
+
+Player connection [14544]  * "[IP] 192.168.1.10 [Port] 0 [Flags] 2 [Guid] 930766264 [EditorId] 930766264 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-D32SDH0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [14544]  * "[IP] 26.173.226.218 [Port] 0 [Flags] 2 [Guid] 930766264 [EditorId] 930766264 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-D32SDH0) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [14544] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [14544] Host joined alternative multi-casting on [225.0.0.222:34997]...
+[PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Refreshing native plugins compatible for Editor in 11.09 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2022.3.38f1 (c5d5a7410213)
+[Subsystems] Discovering subsystems at path E:/Unity 2022.3.38f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/TerentevaA_GUN36/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1660 SUPER (ID=0x21c4)
+    Vendor:   NVIDIA
+    VRAM:     5966 MB
+    Driver:   32.0.16.1088
+Initialize mono
+Mono path[0] = 'E:/Unity 2022.3.38f1/Editor/Data/Managed'
+Mono path[1] = 'E:/Unity 2022.3.38f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'E:/Unity 2022.3.38f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56252
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: E:/Unity 2022.3.38f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.013329 seconds.
+- Loaded All Assemblies, in  1.143 seconds
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.829 seconds
+Domain Reload Profiling: 1970ms
+	BeginReloadAssembly (325ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (2ms)
+	RebuildCommonClasses (122ms)
+	RebuildNativeTypeToScriptingClass (36ms)
+	initialDomainReloadingComplete (182ms)
+	LoadAllAssembliesAndSetupDomain (475ms)
+		LoadAssemblies (321ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (472ms)
+			TypeCache.Refresh (469ms)
+				TypeCache.ScanAssembly (428ms)
+			ScanForSourceGeneratedMonoScriptInfo (1ms)
+			ResolveRequiredComponents (1ms)
+	FinalizeReload (830ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (657ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (17ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (5ms)
+			ProcessInitializeOnLoadAttributes (463ms)
+			ProcessInitializeOnLoadMethodAttributes (151ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+========================================================================
+Worker process is ready to serve import requests
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  1.676 seconds
+Refreshing native plugins compatible for Editor in 5.63 ms, found 0 plugins.
+Native extension for WindowsStandalone target not found
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  1.442 seconds
+Domain Reload Profiling: 3115ms
+	BeginReloadAssembly (458ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (16ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (52ms)
+	RebuildCommonClasses (126ms)
+	RebuildNativeTypeToScriptingClass (36ms)
+	initialDomainReloadingComplete (126ms)
+	LoadAllAssembliesAndSetupDomain (927ms)
+		LoadAssemblies (610ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (576ms)
+			TypeCache.Refresh (479ms)
+				TypeCache.ScanAssembly (458ms)
+			ScanForSourceGeneratedMonoScriptInfo (50ms)
+			ResolveRequiredComponents (45ms)
+	FinalizeReload (1443ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (936ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (12ms)
+			SetLoadedEditorAssemblies (7ms)
+			RefreshPlugins (0ms)
+			BeforeProcessingInitializeOnLoad (132ms)
+			ProcessInitializeOnLoadAttributes (492ms)
+			ProcessInitializeOnLoadMethodAttributes (268ms)
+			AfterProcessingInitializeOnLoad (23ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (28ms)
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.15 seconds
+Refreshing native plugins compatible for Editor in 6.16 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3056 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 55 unused Assets / (0.7 MB). Loaded Objects now: 3514.
+Memory consumption went from 148.2 MB to 147.4 MB.
+Total: 10.575900 ms (FindLiveObjects: 0.689100 ms CreateObjectMapping: 0.199000 ms MarkObjects: 8.857100 ms  DeleteObjects: 0.828600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Import Request.
+  Time since last request: 6071.924835 seconds.
+  path: Assets/TestTask_MobileGame/ProjectSettings/ClusterInputManager.asset
+  artifactKey: Guid(a174dc52b60945e4e99625fdc57a5268) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/ProjectSettings/ClusterInputManager.asset using Guid(a174dc52b60945e4e99625fdc57a5268) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd389e8efd0c0681ab9ea697ec846afec') in 0.415614 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/PolyOne/Free Modular Terrain/Model/SM_Grass_v4_01.fbx
+  artifactKey: Guid(2a0b3ee6106f4d64fadde68becd048a2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/PolyOne/Free Modular Terrain/Model/SM_Grass_v4_01.fbx using Guid(2a0b3ee6106f4d64fadde68becd048a2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '088c44c4bda65c7d8773465cfd17fc9c') in 0.535987 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Scripts/Enemy/EnemyAnimatorListener.cs
+  artifactKey: Guid(7f4a2bf3d4e8a1047b30b4dd7454a191) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Scripts/Enemy/EnemyAnimatorListener.cs using Guid(7f4a2bf3d4e8a1047b30b4dd7454a191) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '82b5a4cec871917f54f7584b8e143826') in 0.016893 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/TestTask_MobileGame/ProjectSettings/ProjectSettings.asset
+  artifactKey: Guid(d3281c86039db5e4090d0b82848c3294) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/ProjectSettings/ProjectSettings.asset using Guid(d3281c86039db5e4090d0b82848c3294) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0ecef62adde54b329059ee9f6577e2c3') in 0.023805 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Scripts/Installers/GameInstaller.cs
+  artifactKey: Guid(f9a38fdf493d441b97fc55f82ff27f5f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Scripts/Installers/GameInstaller.cs using Guid(f9a38fdf493d441b97fc55f82ff27f5f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2078a48b23ff5b8e4a89d11798bc3867') in 0.014150 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Grass_v8_01.prefab
+  artifactKey: Guid(5abe5cabe48b7d348a12bb6c7295f95f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Grass_v8_01.prefab using Guid(5abe5cabe48b7d348a12bb6c7295f95f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f6b87e3188386b8aac5dec577fb73346') in 0.038754 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Resources/Stick.prefab
+  artifactKey: Guid(65af4e4b6da9d6b4ca00052cb8c15ed1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Resources/Stick.prefab using Guid(65af4e4b6da9d6b4ca00052cb8c15ed1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd64d0a151a0a3bdd1a309f31e85eead7') in 0.023908 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000123 seconds.
+  path: Assets/TestTask_MobileGame/ProjectSettings/VersionControlSettings.asset
+  artifactKey: Guid(a12722c5c1b02894f90c5d7c32ef2bd1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/ProjectSettings/VersionControlSettings.asset using Guid(a12722c5c1b02894f90c5d7c32ef2bd1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'aaf936a9f312eea5e3b19c76fe7c2010') in 0.010656 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Grass_v4_01.prefab
+  artifactKey: Guid(60dcb4b6818225d43af86929dee12fe6) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Grass_v4_01.prefab using Guid(60dcb4b6818225d43af86929dee12fe6) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0e6f251b3073153fd6207a9f66462ea8') in 0.028934 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/PolyOne/Free Modular Terrain/Model/SM_Terrain_03.fbx
+  artifactKey: Guid(aa41854e372b88f45adeb8b32069f1b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/PolyOne/Free Modular Terrain/Model/SM_Terrain_03.fbx using Guid(aa41854e372b88f45adeb8b32069f1b3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ae1e9ba4f7bea76d4609b818b51ae6ca') in 0.042388 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.000086 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scenes/SpaceFighter.unity
+  artifactKey: Guid(aea20ff1b07af644f9638d9c740ec0e0) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scenes/SpaceFighter.unity using Guid(aea20ff1b07af644f9638d9c740ec0e0) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Opening scene 'Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scenes/SpaceFighter.unity additively'
+LightingSettings: switching bake backend from 1 to 0.
+Loaded scene 'Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scenes/SpaceFighter.unity'
+	Deserialize:            139.301 ms
+	Integration:            3.967 ms
+	Integration of assets:  4.192 ms
+	Thread Wait Time:       0.066 ms
+	Total Operation Time:   147.527 ms
+ -> (artifact id: '4fc55aa3056279abb6a94ee7495ddb44') in 0.793802 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 36
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample12Scene.unity
+  artifactKey: Guid(4a4aea8df1ad11c47a1db84432dd30f8) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample12Scene.unity using Guid(4a4aea8df1ad11c47a1db84432dd30f8) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+Opening scene 'Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample12Scene.unity additively'
+LightingSettings: switching bake backend from 1 to 0.
+Loaded scene 'Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample12Scene.unity'
+	Deserialize:            52.680 ms
+	Integration:            88.738 ms
+	Integration of assets:  2.079 ms
+	Thread Wait Time:       0.083 ms
+	Total Operation Time:   143.579 ms
+ -> (artifact id: '778a0eb33cb91fbfeaa2479209edc5c3') in 0.223884 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Observable.cs
+  artifactKey: Guid(a2dd1c80d4559fd4ca9ef62f20d031ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Observable.cs using Guid(a2dd1c80d4559fd4ca9ef62f20d031ab) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0e0322aca4c94cc48b3e175c11429a26') in 0.026471 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/TextMesh Pro/Sprites/EmojiOne.json
+  artifactKey: Guid(8f05276190cf498a8153f6cbe761d4e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/TextMesh Pro/Sprites/EmojiOne.json using Guid(8f05276190cf498a8153f6cbe761d4e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '65601ebbb8f33651c7be713e5c961ae9') in 0.012024 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample07_OrchestratIEnumerator.cs
+  artifactKey: Guid(d437607dfffa8ff428bda3366354078d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample07_OrchestratIEnumerator.cs using Guid(d437607dfffa8ff428bda3366354078d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '00366e58f6f9fc09aa8b2f5af92b6ab7') in 0.032081 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Scripts/Messages/MoveFailedMessage.cs
+  artifactKey: Guid(ca828ffed7fc41fbbebb7a95de0bcdcd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Scripts/Messages/MoveFailedMessage.cs using Guid(ca828ffed7fc41fbbebb7a95de0bcdcd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '606cf4274a7f9e7a990008e608ad5ee5') in 0.016858 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Grass_v4_02.prefab
+  artifactKey: Guid(a435e309a28d19243ae5c059cbda9ab8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Grass_v4_02.prefab using Guid(a435e309a28d19243ae5c059cbda9ab8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e5bda14416429b43693338f5c4251658') in 0.030336 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.001034 seconds.
+  path: Assets/TestTask_MobileGame/ProjectSettings/EditorBuildSettings.asset
+  artifactKey: Guid(7f2594581bc80ac429cc836bc5ba4503) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/ProjectSettings/EditorBuildSettings.asset using Guid(7f2594581bc80ac429cc836bc5ba4503) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1f98b0ff0781dcf39e5be311771dcd94') in 0.026271 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Prefabs/Bullet.prefab
+  artifactKey: Guid(4d22825d6393b964f90d550dd2acc50f) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Prefabs/Bullet.prefab using Guid(4d22825d6393b964f90d550dd2acc50f) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '79e3f34dd443a5274d087e8783b0bfd0') in 0.011568 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 10
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample04_ConvertFromUnityCallback.cs
+  artifactKey: Guid(73e69fd4bbb724045a4e06050fbc5af3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Examples/Sample04_ConvertFromUnityCallback.cs using Guid(73e69fd4bbb724045a4e06050fbc5af3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e7f9e2152f48e66bf7d73c2028288b96') in 0.017119 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000077 seconds.
+  path: Assets/TestTask_MobileGame/ProjectSettings/InputManager.asset
+  artifactKey: Guid(6f644dcea69490e4d815b738f97d6e25) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b)
+Start importing Assets/TestTask_MobileGame/ProjectSettings/InputManager.asset using Guid(6f644dcea69490e4d815b738f97d6e25) Importer(2089858483,3d70f49cd1c2eb9ae422958d1c652c6b) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'af083a4406cbe6aea42b72b4204a096d') in 0.010313 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 0
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/ProjectSettings/UnityConnectSettings.asset
+  artifactKey: Guid(979ddd13788c14343bc45ccaa025003a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/ProjectSettings/UnityConnectSettings.asset using Guid(979ddd13788c14343bc45ccaa025003a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '537b7e0cb2b3357d0dc9aa66e7217541') in 0.012917 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Version.txt
+  artifactKey: Guid(4917e73af158b1e4782b175c0568afcf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Version.txt using Guid(4917e73af158b1e4782b175c0568afcf) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e925c1e8071b6ab44c00e1e39e8d62ec') in 0.011351 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000737 seconds.
+  path: Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Terrain_02.prefab
+  artifactKey: Guid(72f64d2d2f97793409bca236ad93d486) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/PolyOne/Free Modular Terrain/Prefabs/SM_Terrain_02.prefab using Guid(72f64d2d2f97793409bca236ad93d486) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e90c627d8aa4ae79ea5104042425665b') in 0.034198 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 7
+========================================================================
+Received Import Request.
+  Time since last request: 0.001534 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/TimeInterval.cs
+  artifactKey: Guid(dd48622e783cadc47af9a6b456ac8438) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/TimeInterval.cs using Guid(dd48622e783cadc47af9a6b456ac8438) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2cca0de7512589370967087b4386a6f6') in 0.011199 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader
+  artifactKey: Guid(85187c2149c549c5b33f0cdb02836b17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader using Guid(85187c2149c549c5b33f0cdb02836b17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c849e50bee7769aecf2a97f59aaef5dd') in 0.029344 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.156805 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/AsyncReactiveProperty.cs
+  artifactKey: Guid(8ef320b87f537ee4fb2282e765dc6166) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/AsyncReactiveProperty.cs using Guid(8ef320b87f537ee4fb2282e765dc6166) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'aa50727705d2a323a0d1293028fb6c51') in 0.039825 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Channel.cs
+  artifactKey: Guid(5ceb3107bbdd1f14eb39091273798360) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Channel.cs using Guid(5ceb3107bbdd1f14eb39091273798360) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'fee58b441ecd5764207365e09bdf8d8c') in 0.018521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Scripts/Core/Tweener/RotateAroundTweener.cs
+  artifactKey: Guid(4daa9bf94509423394e6c57b7845b8c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Scripts/Core/Tweener/RotateAroundTweener.cs using Guid(4daa9bf94509423394e6c57b7845b8c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ae68c93e327ca436c8f7ec99417e2a2b') in 0.017203 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Disposables/CompositeDisposable.cs
+  artifactKey: Guid(a0f9d923bd5f4cd47b39bdd83125de27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Disposables/CompositeDisposable.cs using Guid(a0f9d923bd5f4cd47b39bdd83125de27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e88d4228b2e2c845a4d5ddf061b8c7ab') in 0.043355 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/AutoSubstitute.zip
+  artifactKey: Guid(3d9bd58f4dad04d4aa76be96981ea7d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/AutoSubstitute.zip using Guid(3d9bd58f4dad04d4aa76be96981ea7d1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'dd9ae7183304054dca779ba292e51500') in 0.012253 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Scripts/Core/Messenger/IMessageListener.cs
+  artifactKey: Guid(189da5761a8d40cca94d76aacf7384fc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Scripts/Core/Messenger/IMessageListener.cs using Guid(189da5761a8d40cca94d76aacf7384fc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f52fd59ca10010f038833fb1df0a1c7d') in 0.012203 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000050 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTask.Delay.cs
+  artifactKey: Guid(ecff7972251de0848b2c0fa89bbd3489) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTask.Delay.cs using Guid(ecff7972251de0848b2c0fa89bbd3489) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5db9e1a25a6f0a93065abef11d324462') in 0.010200 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTask.cs
+  artifactKey: Guid(8947adf23181ff04db73829df217ca94) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTask.cs using Guid(8947adf23181ff04db73829df217ca94) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1e5980f048a773aeeaea515070a99390') in 0.019496 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.Shorthand.cs
+  artifactKey: Guid(4b4ff020f73dc6d4b8ebd4760d61fb43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTaskExtensions.Shorthand.cs using Guid(4b4ff020f73dc6d4b8ebd4760d61fb43) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f1228dc93a6f469bf900c37f6a3178c1') in 0.024282 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTaskVoid.cs
+  artifactKey: Guid(e9f28cd922179634d863011548f89ae7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UniTaskVoid.cs using Guid(e9f28cd922179634d863011548f89ae7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '51ed86da3f171cb2503a8edd3b25c490') in 0.011704 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/TriggerEvent.cs
+  artifactKey: Guid(f68b22bb8f66f5c4885f9bd3c4fc43ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/TriggerEvent.cs using Guid(f68b22bb8f66f5c4885f9bd3c4fc43ed) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ae8e9db88f818918a07297c4b9dc2c8a') in 0.023200 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/_InternalVisibleTo.cs
+  artifactKey: Guid(8507e97eb606fad4b99c6edf92e19cb8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/_InternalVisibleTo.cs using Guid(8507e97eb606fad4b99c6edf92e19cb8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '980e44e6e1192a71cba83004261af737') in 0.018755 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AsyncGPUReadback.cs
+  artifactKey: Guid(98f5fedb44749ab4688674d79126b46a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/UnityAsyncExtensions.AsyncGPUReadback.cs using Guid(98f5fedb44749ab4688674d79126b46a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '74952a9d192ec95112f97fb2f5aec59b') in 0.015805 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TestTask_MobileGame/Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset
+  artifactKey: Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/TextMesh Pro/Resources/Fonts & Materials/LiberationSans SDF.asset using Guid(8f586378b4e144a9851e7b34d9b748ee) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '45f5dc1acbdfce0d454aff74e0bb2214') in 0.215731 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 8
+========================================================================
+Received Import Request.
+  Time since last request: 0.119031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Disposables/SingleAssignmentDisposable.cs
+  artifactKey: Guid(7ec869f7548c62748ad57a5c86b2f6ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Disposables/SingleAssignmentDisposable.cs using Guid(7ec869f7548c62748ad57a5c86b2f6ba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f164f6de03c0feb7b798263627a53120') in 0.040238 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001415 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityWinRTBridge/ThreadPoolScheduler_UnityWinRT.cs
+  artifactKey: Guid(2c36c9256c17bbb40854ef9b9e4d51c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityWinRTBridge/ThreadPoolScheduler_UnityWinRT.cs using Guid(2c36c9256c17bbb40854ef9b9e4d51c7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0c3e983edc278e29657fd3dea5481031') in 0.043324 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/IgnoreElements.cs
+  artifactKey: Guid(d6c8ca210619da74b92cbdb3e8c58127) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/IgnoreElements.cs using Guid(d6c8ca210619da74b92cbdb3e8c58127) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bb85b001bbe6e68b486cafa9d4230470') in 0.014530 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Internal/ArrayPoolUtil.cs
+  artifactKey: Guid(424cc208fb61d4e448b08fcfa0eee25e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Internal/ArrayPoolUtil.cs using Guid(424cc208fb61d4e448b08fcfa0eee25e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3108e2040e6b60b3e6c870710391a854') in 0.054269 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/CoroutineAsyncBridge.cs
+  artifactKey: Guid(93ca3de3810199947871ab4a77014fa3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/CoroutineAsyncBridge.cs using Guid(93ca3de3810199947871ab4a77014fa3) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '566c5568366b0684a7f1380edf44a9a6') in 0.029327 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/First.cs
+  artifactKey: Guid(8e3093220aeb1d54faa3fca9fe0af6c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/First.cs using Guid(8e3093220aeb1d54faa3fca9fe0af6c0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '013d4f78610bd62ce9a4adf734fa77b1') in 0.010925 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Schedulers/CurrentThreadScheduler.cs
+  artifactKey: Guid(1d547b5ee71b7284db1fecfcdfa59fac) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Schedulers/CurrentThreadScheduler.cs using Guid(1d547b5ee71b7284db1fecfcdfa59fac) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8391ca8984d3c12a326f6bf7f0a0c8c7') in 0.010714 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000158 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityWinRTBridge/Thread.cs
+  artifactKey: Guid(bf1175d5dd9b5904d898eb4c9dd7e0c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityWinRTBridge/Thread.cs using Guid(bf1175d5dd9b5904d898eb4c9dd7e0c5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7f75ff7c536399d3d9e70d4f8c79b896') in 0.015933 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Merge.cs
+  artifactKey: Guid(94158fab525468d4e896a62f633257e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Merge.cs using Guid(94158fab525468d4e896a62f633257e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '3ef5ba49a97b68fdc5c75677ea94e71c') in 0.015448 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/UnityEventExtensions.cs
+  artifactKey: Guid(e3c4861cc04ac524484d0730a3a5bd4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/UnityEventExtensions.cs using Guid(e3c4861cc04ac524484d0730a3a5bd4a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c2ecaf0cc14333a8f71755d9825b8932') in 0.037716 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000048 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/SelectWhere.cs
+  artifactKey: Guid(6a7561d10967d6b4d9c2a67ffc3b9d85) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/SelectWhere.cs using Guid(6a7561d10967d6b4d9c2a67ffc3b9d85) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '37cac986c7d8d3346aa4798a50749b49') in 0.014422 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Repeat.cs
+  artifactKey: Guid(63930706f2ea6e847866fc6d914b0d2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Repeat.cs using Guid(63930706f2ea6e847866fc6d914b0d2e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a0f1ad94ecb8cf3b1b029f78491825ef') in 0.024983 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/UnityGraphicExtensions.cs
+  artifactKey: Guid(99be646df339108498ebb70efa1b7bd4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/UnityGraphicExtensions.cs using Guid(99be646df339108498ebb70efa1b7bd4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ba6a10e8c22ac3c8832f877ae42e9293') in 0.011398 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/SynchronizedObserver.cs
+  artifactKey: Guid(4fd465af6ee05a64f9115b45b58360b7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/SynchronizedObserver.cs using Guid(4fd465af6ee05a64f9115b45b58360b7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '626c92ef8472c0669740a37f9fd691a2') in 0.018657 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000149 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Schedulers/IScheduler.cs
+  artifactKey: Guid(7409b202c20d3894b9677c8f2a27f3aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Schedulers/IScheduler.cs using Guid(7409b202c20d3894b9677c8f2a27f3aa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4be7115ce2fe1d795e0737a688dcf2b9') in 0.016392 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/DefaultIfEmpty.cs
+  artifactKey: Guid(551075cda284fbc489824d153743b1e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/DefaultIfEmpty.cs using Guid(551075cda284fbc489824d153743b1e6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '32658c4c8e5b365713155802d27422d1') in 0.156343 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000917 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/SkipLast.cs
+  artifactKey: Guid(df1d7f44d4fe7754f972c9e0b6fa72d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/SkipLast.cs using Guid(df1d7f44d4fe7754f972c9e0b6fa72d5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8ceab3d21c4b32d06d2a78c662f5b74c') in 0.024249 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000091 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/ToUniTaskAsyncEnumerable.cs
+  artifactKey: Guid(d7192de2a0581ec4db62962cc1404af5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/ToUniTaskAsyncEnumerable.cs using Guid(d7192de2a0581ec4db62962cc1404af5) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2d007159756d0e7bee60d5b337f0e3e5') in 0.014704 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj
+  artifactKey: Guid(aebd7ef925dd4fe4690c3238e879f914) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Zenject-Signals.csproj using Guid(aebd7ef925dd4fe4690c3238e879f914) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b2c6199a434fd9b788481733616574a0') in 0.017429 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Last.cs
+  artifactKey: Guid(a0ccc93be1387fa4a975f06310127c11) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Last.cs using Guid(a0ccc93be1387fa4a975f06310127c11) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1fb99a81f4d035bdd8433db03e018740') in 0.014675 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000122 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/ToLookup.cs
+  artifactKey: Guid(57da22563bcd6ca4aaf256d941de5cb0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/ToLookup.cs using Guid(57da22563bcd6ca4aaf256d941de5cb0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7709706544935882ad4fdcb037281a8d') in 0.012081 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Zip.cs
+  artifactKey: Guid(acc1acff153e347418f0f30b1c535994) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Zip.cs using Guid(acc1acff153e347418f0f30b1c535994) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e19dd8cc022763fd5a36406fa6152083') in 0.009931 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Intersect.cs
+  artifactKey: Guid(93999a70f5d57134bbe971f3e988c4f2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Intersect.cs using Guid(93999a70f5d57134bbe971f3e988c4f2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '999fa520a59a4fe226238220ea3c4dd8') in 0.013046 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/UnityInspectorListEditor.cs
+  artifactKey: Guid(06d16f2f9107265428d41710db4cbb14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/UnityInspectorListEditor.cs using Guid(06d16f2f9107265428d41710db4cbb14) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4e98624cf00a41d01928faa9f34f9133') in 0.012521 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/IFactory.cs
+  artifactKey: Guid(62c651ad6c58c1140ac224dc6284fa5e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/IFactory.cs using Guid(62c651ad6c58c1140ac224dc6284fa5e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b2a5fd3b49700ca7739cb046bd0c3f20') in 0.024914 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Triggers/AsyncDestroyTrigger.cs
+  artifactKey: Guid(f4afdcb1cbadf954ba8b1cf465429e17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Triggers/AsyncDestroyTrigger.cs using Guid(f4afdcb1cbadf954ba8b1cf465429e17) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4fed37b304d021d235cfa010e2a46471') in 0.025129 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.003788 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Internal/Error.cs
+  artifactKey: Guid(5f39f495294d4604b8082202faf98554) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Internal/Error.cs using Guid(5f39f495294d4604b8082202faf98554) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '09e8cb32a2071a55d506a59a6c8798ed') in 0.015079 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.001526 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/ToList.cs
+  artifactKey: Guid(3859c1b31e81d9b44b282e7d97e11635) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/ToList.cs using Guid(3859c1b31e81d9b44b282e7d97e11635) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8bf35b873097c99ce77ca0abd1e863ec') in 0.037291 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000339 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Sum.cs
+  artifactKey: Guid(4149754066a21a341be58c04357061f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/Sum.cs using Guid(4149754066a21a341be58c04357061f6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5ffe23a20727a415689ce01c515d49ca') in 0.027898 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000721 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Validation/ValidationMarker.cs
+  artifactKey: Guid(27e4cef6504bc0243b1893240d22b72d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Validation/ValidationMarker.cs using Guid(27e4cef6504bc0243b1893240d22b72d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'dc13a7154bc1557c698348e6b04e003a') in 0.013526 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/FromCoroutine.cs
+  artifactKey: Guid(e83ddad992535fb4f8a68a1e7ef8be60) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/FromCoroutine.cs using Guid(e83ddad992535fb4f8a68a1e7ef8be60) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8b1315ca1badda250f8f9eea7dbe446e') in 0.010344 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Internal/TypeExtensions.cs
+  artifactKey: Guid(2697c251f47f2bc40b32922c5a796f65) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Internal/TypeExtensions.cs using Guid(2697c251f47f2bc40b32922c5a796f65) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c6dd1f87a9a291bf60e0ceac8b6e306d') in 0.012560 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Validation/IValidatable.cs
+  artifactKey: Guid(5d2a7156fffca9b439f7734d94ccf336) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Validation/IValidatable.cs using Guid(5d2a7156fffca9b439f7734d94ccf336) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4f20b4504a200e8c96e5d010102efcc5') in 0.011674 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Internal/Assert.cs
+  artifactKey: Guid(2968c9f42475ea146aec3ced9cbd99ad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Internal/Assert.cs using Guid(2968c9f42475ea146aec3ced9cbd99ad) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '05c9f723cf2ebb64ee3554fe732c6b12') in 0.021027 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableMouseTrigger.cs
+  artifactKey: Guid(c5f30958c5509bc4f9c14ea261a1567c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableMouseTrigger.cs using Guid(c5f30958c5509bc4f9c14ea261a1567c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f4acc6c223fdc19ec2ccd0ae4e0781c3') in 0.011177 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000053 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableDeselectTrigger.cs
+  artifactKey: Guid(9fe6f69c4d869c04e8a1924aab1d3694) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableDeselectTrigger.cs using Guid(9fe6f69c4d869c04e8a1924aab1d3694) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '372e2417c9555683b7b1b250e21b7c53') in 0.017336 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/ReflectionUtil.cs
+  artifactKey: Guid(7c74b10dac7e87e4095f8e3157eb040d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/ReflectionUtil.cs using Guid(7c74b10dac7e87e4095f8e3157eb040d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '55f9e69993cb6181e3852842bd963c8f') in 0.011147 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/ProfileBlock.cs
+  artifactKey: Guid(952433523e6a6e445adc4ac7e2086e7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/ProfileBlock.cs using Guid(952433523e6a6e445adc4ac7e2086e7d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e6f36e4875f6a3ff3c549badb2cbf475') in 0.011684 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/ProfileTimers.cs
+  artifactKey: Guid(81cad1ee2d8c20942a68a4228e09ff1d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/ProfileTimers.cs using Guid(81cad1ee2d8c20942a68a4228e09ff1d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bdc92531661537bef0b1d18ecc5b0af6') in 0.018136 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000866 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableCollision2DTrigger.cs
+  artifactKey: Guid(1be7847b61f30f24daa5762db87a5b19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableCollision2DTrigger.cs using Guid(1be7847b61f30f24daa5762db87a5b19) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '371465c8d5ec58f0ae177ad63b049424') in 0.013431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/FrameTimeInterval.cs
+  artifactKey: Guid(a55cce9ef638364409d1227a25a32421) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/FrameTimeInterval.cs using Guid(a55cce9ef638364409d1227a25a32421) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4efa99c1bf02dc683cf8058ed8368b09') in 0.036095 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/CheatSheet.cs
+  artifactKey: Guid(1d2fc6db101e75248ab98ad463a99ffa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Util/CheatSheet.cs using Guid(1d2fc6db101e75248ab98ad463a99ffa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7a67bc475e072ef34320da1563753b7d') in 0.012573 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Runtime/SceneContextRegistry.cs
+  artifactKey: Guid(11e438b2dc7552349949f24c14de14be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Runtime/SceneContextRegistry.cs using Guid(11e438b2dc7552349949f24c14de14be) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '06bbb8902ae5b4efb41e7ca3e617d86c') in 0.016061 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableEndDragTrigger.cs
+  artifactKey: Guid(b8ce8424f238d6842bd8b09c0cca1ac4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableEndDragTrigger.cs using Guid(b8ce8424f238d6842bd8b09c0cca1ac4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '952d8cccfad0a5d08dbb45539de3965c') in 0.013442 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000044 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Diagnostics/ObservableDebugExtensions.cs
+  artifactKey: Guid(b43f948e095c3e749a0506709be90d68) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Diagnostics/ObservableDebugExtensions.cs using Guid(b43f948e095c3e749a0506709be90d68) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '950272595d8efdc417f460f5a089bc98') in 0.019434 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Scripts/Core/Tweener/Decorator/ParallelTweener.cs
+  artifactKey: Guid(1492500321344d16af97d9d837668cf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Scripts/Core/Tweener/Decorator/ParallelTweener.cs using Guid(1492500321344d16af97d9d837668cf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '019b54d091cf451cb3d7dc5d6f81c621') in 0.010586 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/SubscribeOnMainThread.cs
+  artifactKey: Guid(da3fd97518766ab43827991b7b5d4270) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/SubscribeOnMainThread.cs using Guid(da3fd97518766ab43827991b7b5d4270) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e8496dae931e5e354aa8144dc6307b11') in 0.011089 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Materialize.cs
+  artifactKey: Guid(09d3ba9e6d5fe4643bbf0df943652908) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Materialize.cs using Guid(09d3ba9e6d5fe4643bbf0df943652908) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5366cc146baf0deb0a657472c9196489') in 0.016854 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTriggerBase.cs
+  artifactKey: Guid(850bc951297608e4fb0722795c21ed16) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTriggerBase.cs using Guid(850bc951297608e4fb0722795c21ed16) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f4fb5879e79efd47368832773c2adf03') in 0.025318 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/Pooling/PoolFactory.cs
+  artifactKey: Guid(125bde4ab63a4984484c450640ee1702) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/Pooling/PoolFactory.cs using Guid(125bde4ab63a4984484c450640ee1702) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '596030eb429a66c1c70e3f5094853021') in 0.014605 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/Timer.cs
+  artifactKey: Guid(382caacde439855418709c641e4d7b04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/Linq/UnityExtensions/Timer.cs using Guid(382caacde439855418709c641e4d7b04) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0767e5f5a6eb249d280b089c5487b275') in 0.024650 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000056 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/Editors/RunnableContextEditor.cs
+  artifactKey: Guid(02bed9738f9c4323ac05524465473dee) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/Editors/RunnableContextEditor.cs using Guid(02bed9738f9c4323ac05524465473dee) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9869c3d8283e7588b0f1536322a48f45') in 0.014131 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/SubContainerCreators/SubContainerCreatorByInstanceGetter.cs
+  artifactKey: Guid(164cf97cfe8f32441beb85b9b3c05868) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/SubContainerCreators/SubContainerCreatorByInstanceGetter.cs using Guid(164cf97cfe8f32441beb85b9b3c05868) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'b774a9b42cdef36b3c434318751baeff') in 0.018503 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/InstantiateCallbackConditionCopyNonLazyBinder.cs
+  artifactKey: Guid(0711425cf187dd94ea21d8ed6f38d981) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/InstantiateCallbackConditionCopyNonLazyBinder.cs using Guid(0711425cf187dd94ea21d8ed6f38d981) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'cdd2ae9d36a084426358dccc5d302646') in 0.019736 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/ComponentProviders/InstantiateOnPrefabComponentProvider.cs
+  artifactKey: Guid(e6836adf19243a045ba39e67ade6dd59) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/ComponentProviders/InstantiateOnPrefabComponentProvider.cs using Guid(e6836adf19243a045ba39e67ade6dd59) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2339a1420c64eae6589168d02c4ab19a') in 0.009951 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/WithKernelScopeConcreteIdArgConditionCopyNonLazyBinder.cs
+  artifactKey: Guid(6447473513963f742b7ab3c02ec633a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/WithKernelScopeConcreteIdArgConditionCopyNonLazyBinder.cs using Guid(6447473513963f742b7ab3c02ec633a8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '46f76178b36fd01b12ce80e5e48c8509') in 0.180244 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Misc/AudioHandler.cs
+  artifactKey: Guid(24cbab5eaeb84b44481d817f66ea7b27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Misc/AudioHandler.cs using Guid(24cbab5eaeb84b44481d817f66ea7b27) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd3cdd5c1e352bdfb0120d17dec5b49b9') in 0.013346 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000042 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Install/Contexts/RunnableContext.cs
+  artifactKey: Guid(13e9b26d23f6422cb282cc27631fc9e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Install/Contexts/RunnableContext.cs using Guid(13e9b26d23f6422cb282cc27631fc9e2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4174ec791090c50102e5fcc0015b5b6a') in 0.010332 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Install/Contexts/SceneDecoratorContext.cs
+  artifactKey: Guid(ed7323e8fdd8c26438c6485f2060dad0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Install/Contexts/SceneDecoratorContext.cs using Guid(ed7323e8fdd8c26438c6485f2060dad0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6a23531dd6eb977780867bd2e030cd24') in 0.014431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/MemoryPoolMonitor/Editor/MpmSettingsInstaller.cs
+  artifactKey: Guid(7893183729d13c84b80bb80d3aac6715) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/MemoryPoolMonitor/Editor/MpmSettingsInstaller.cs using Guid(7893183729d13c84b80bb80d3aac6715) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '650560da06bec22cc03781226c9ba491') in 0.021192 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscription.cs
+  artifactKey: Guid(26affab6a482d904580cce7f9f1a94f4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/SignalSubscription.cs using Guid(26affab6a482d904580cce7f9f1a94f4) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '03761e7b735eec3d056fe2cddfac6cfa') in 0.012514 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Materials/BulletPlayer.mat
+  artifactKey: Guid(a7a4a87af7fdbd44da0519a1910c7393) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Materials/BulletPlayer.mat using Guid(a7a4a87af7fdbd44da0519a1910c7393) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '81576204a5d31395a57e82fd2207923f') in 0.019400 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/ConcreteBinders/ConcreteBinderNonGeneric.cs
+  artifactKey: Guid(b04935d23b1499e42a242d63a3fe248b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/ConcreteBinders/ConcreteBinderNonGeneric.cs using Guid(b04935d23b1499e42a242d63a3fe248b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1067f0e2783cf9469915d980df0f1d9b') in 0.015334 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Installers/GameSettingsInstaller.cs
+  artifactKey: Guid(1db4d8ab51ca4ad48844c113bfbd80fa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Installers/GameSettingsInstaller.cs using Guid(1db4d8ab51ca4ad48844c113bfbd80fa) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '5c6713493e57352d157e29f71f1b2ca0') in 0.013846 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000160 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/ConcreteBinders/ConcreteIdBinderGeneric.cs
+  artifactKey: Guid(358cdf402ef00ff40ac81f3bbe7018f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/ConcreteBinders/ConcreteIdBinderGeneric.cs using Guid(358cdf402ef00ff40ac81f3bbe7018f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7df4989d486b1c06a233d47d42ce725b') in 0.014556 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Misc/AudioPlayer.cs
+  artifactKey: Guid(a57395b833349ce43a64f59377d0e398) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Misc/AudioPlayer.cs using Guid(a57395b833349ce43a64f59377d0e398) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '116e19fe5e7d38dad237ad99061b9229') in 0.010344 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Prefabs/Enemy.prefab
+  artifactKey: Guid(55f63c48150ecbb469e095dbde67c6e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Media/Prefabs/Enemy.prefab using Guid(55f63c48150ecbb469e095dbde67c6e9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8cde3d2d19d82257b53ece2a648177e9') in 0.082431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 12
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/ComponentProviders/GetFromGameObjectGetterComponentProvider.cs
+  artifactKey: Guid(766643a5935eb704a929da28681bf70e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/ComponentProviders/GetFromGameObjectGetterComponentProvider.cs using Guid(766643a5935eb704a929da28681bf70e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '104acfc26ebf64daadf025a39770b301') in 0.024585 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000278 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTrigger2DTrigger.cs
+  artifactKey: Guid(1aad3129752ef804999a880a7b2d72ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Triggers/ObservableTrigger2DTrigger.cs using Guid(1aad3129752ef804999a880a7b2d72ef) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bd38d64513cd174d63cb52916b98c354') in 0.013100 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000040 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/MemoryPoolMonitor/Editor/DebugWindow/MpmWindow.cs
+  artifactKey: Guid(e38c08208cf0cee48a675a3944d37e10) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/MemoryPoolMonitor/Editor/DebugWindow/MpmWindow.cs using Guid(e38c08208cf0cee48a675a3944d37e10) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '91ce13a0ecb1d5c47f2253db2336dd3d') in 0.026005 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000380 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/Editors/ProjectContextEditor.cs
+  artifactKey: Guid(b5ad40b612e67574aad508d053e6965b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/Editors/ProjectContextEditor.cs using Guid(b5ad40b612e67574aad508d053e6965b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd3fbf9b95b2a936898ac66d55abac1bf') in 0.015196 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000033 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Main/GameController.cs
+  artifactKey: Guid(d1fe837eefbc3fa4ab06a9081d26caf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Main/GameController.cs using Guid(d1fe837eefbc3fa4ab06a9081d26caf9) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7e7b45ef9dc587b2aa66c04d95d2427c') in 0.013707 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Player/PlayerDirectionHandler.cs
+  artifactKey: Guid(a99d48a043510d549a4f7078a8653233) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Player/PlayerDirectionHandler.cs using Guid(a99d48a043510d549a4f7078a8653233) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '47dfdd132443f62df2eeba81bf97a10c') in 0.012365 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000183 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Prefabs/Fire.prefab
+  artifactKey: Guid(69fdd131bc1398b4b932a019fd9328f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Prefabs/Fire.prefab using Guid(69fdd131bc1398b4b932a019fd9328f0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd426bf4aaebac68fb5cc9198a582bf75') in 0.012598 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 4
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Player/PlayerModel.cs
+  artifactKey: Guid(08563d6b38c31254692837726a00f677) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Player/PlayerModel.cs using Guid(08563d6b38c31254692837726a00f677) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '49dcce5c6e97b98daaa0d9ec914759a3') in 0.021361 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/UniTask.TextMeshPro.asmdef
+  artifactKey: Guid(dc47925d1a5fa2946bdd37746b2b5d48) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/External/TextMeshPro/UniTask.TextMeshPro.asmdef using Guid(dc47925d1a5fa2946bdd37746b2b5d48) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6d2f338ea4d5db81db62c447fb5f259d') in 0.012772 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/Pooling/IMemoryPool.cs
+  artifactKey: Guid(13b8377ec575a1a44a1028ee324ba17a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/Pooling/IMemoryPool.cs using Guid(13b8377ec575a1a44a1028ee324ba17a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '97b62512bee530bef5bff4d360316814') in 0.009082 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/PrefabProviders/PrefabProviderCustom.cs
+  artifactKey: Guid(f6f578cfe9da346348878e4a26617ee0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Providers/PrefabProviders/PrefabProviderCustom.cs using Guid(f6f578cfe9da346348878e4a26617ee0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'f9486ced43e572eb44951f2c8a108004') in 0.010649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Install/Contexts/StaticContext.cs
+  artifactKey: Guid(668a9feb769954340b35901a0c829397) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Install/Contexts/StaticContext.cs using Guid(668a9feb769954340b35901a0c829397) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '96588a2d669988b08edd975f1598ec96') in 0.014352 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryToChoiceIdBinder/FactoryToChoiceIdBinder2.cs
+  artifactKey: Guid(c109e2a5fd72a004e83beae958fa888a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryToChoiceIdBinder/FactoryToChoiceIdBinder2.cs using Guid(c109e2a5fd72a004e83beae958fa888a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '023d8f5e01c5078ba38646b7b6faa2e6') in 0.013519 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Textures/1K_Body-NM.jpg
+  artifactKey: Guid(b425f3d4e800e284e90bfeccc7276fba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Textures/1K_Body-NM.jpg using Guid(b425f3d4e800e284e90bfeccc7276fba) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '1db6e7fafb67a98a0457ce59a5701373') in 0.258258 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryToChoiceIdBinder/FactoryToChoiceIdBinder10.cs
+  artifactKey: Guid(3e0b2700788fac54698446fcfad2b705) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryToChoiceIdBinder/FactoryToChoiceIdBinder10.cs using Guid(3e0b2700788fac54698446fcfad2b705) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '2f1e11c8ca72208188337b61971e5ea5') in 0.013341 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000340 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Textures/1K_Spec.jpg
+  artifactKey: Guid(0ea2ae5c475a8224f9f6c107611afe7b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/SpaceShip/Textures/1K_Spec.jpg using Guid(0ea2ae5c475a8224f9f6c107611afe7b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '72de1ac03439497581f491e3b38b1ea0') in 0.078221 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalIdToBinder.cs
+  artifactKey: Guid(ecce6d44c178e564c8937125741f3c8c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Internal/Binders/BindSignal/BindSignalIdToBinder.cs using Guid(ecce6d44c178e564c8937125741f3c8c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e38856335459f8b95e00b29dca23aaf7') in 0.010161 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000034 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Shaders/AddSmooth_Layer.shader
+  artifactKey: Guid(e10518acdaf774d528297b6d5b3a5839) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Shaders/AddSmooth_Layer.shader using Guid(e10518acdaf774d528297b6d5b3a5839) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'ada01f839c196f8559be8d5419154464') in 0.006335 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000039 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Textures/fire2.png
+  artifactKey: Guid(590e5ca5d888e4258ac16b80a33e024d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Imported/Textures/fire2.png using Guid(590e5ca5d888e4258ac16b80a33e024d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '330d1745e7f421cead9c2e87be12256d') in 0.039172 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/Pooling/PoolableMemoryPool.cs
+  artifactKey: Guid(7fa0c435e1800a048ac5f7c53e03472d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Factories/Pooling/PoolableMemoryPool.cs using Guid(7fa0c435e1800a048ac5f7c53e03472d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '227424e36ee3847003d3abfd489003e3') in 0.014287 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000061 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll
+  artifactKey: Guid(6b309800e744d8c46ad868763fc9c429) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/ReflectionBaking/Lib/Zenject.ReflectionBaking.Mono.Cecil.Mdb.dll using Guid(6b309800e744d8c46ad868763fc9c429) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a0ae69ca5ed5eb856f9f81dc42d75c63') in 0.014994 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryFromBinder/SubContainerBinder/FactorySubContainerBinder0.cs
+  artifactKey: Guid(3c12d5eb6ac4cc8449986d020ef27e4f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryFromBinder/SubContainerBinder/FactorySubContainerBinder0.cs using Guid(3c12d5eb6ac4cc8449986d020ef27e4f) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '50cf2fa6ec91c1abcb80f0498ddef392') in 0.036305 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryFromBinder/SubContainerBinder/FactorySubContainerBinder5.cs
+  artifactKey: Guid(e562a021e16d4a2418f6c47de105c64e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryFromBinder/SubContainerBinder/FactorySubContainerBinder5.cs using Guid(e562a021e16d4a2418f6c47de105c64e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '0fc62486d70ae6204c6f7277330be0a3') in 0.019524 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000424 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Runtime/Kernels/DefaultGameObjectKernel.cs
+  artifactKey: Guid(1c47912ae4e51a84d92f1acf689997c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Runtime/Kernels/DefaultGameObjectKernel.cs using Guid(1c47912ae4e51a84d92f1acf689997c8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9a55e31bd86a5ece22dfb0441455323e') in 0.011133 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/SceneParentLoading/DefaultSceneContractConfig.cs
+  artifactKey: Guid(8620c058a9173b84a97d72ed5e94dbd7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Editor/SceneParentLoading/DefaultSceneContractConfig.cs using Guid(8620c058a9173b84a97d72ed5e94dbd7) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '7c19ffa905cae19e919630b186646a7f') in 0.017678 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Enemy/EnemyTunables.cs
+  artifactKey: Guid(ff5c7e92da51264499aca355ed207cbd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame2 (Advanced)/Scripts/Enemy/EnemyTunables.cs using Guid(ff5c7e92da51264499aca355ed207cbd) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e6e2c9c95159dd2d32f763d1e6d19008') in 0.013190 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000057 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/asteroid.png
+  artifactKey: Guid(f67021125bb29c34d81355e68915c874) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/asteroid.png using Guid(f67021125bb29c34d81355e68915c874) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'e98588d57b623d859b9691efeb3ebaab') in 0.028407 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalDeclarationAsyncInitializer.cs
+  artifactKey: Guid(e8d0040c0a3734b49b26f7cdaa86c5e8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/Signals/Main/SignalDeclarationAsyncInitializer.cs using Guid(e8d0040c0a3734b49b26f7cdaa86c5e8) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '02122aa38c732e0e79335d7ba826258b') in 0.010572 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/stars.jpg
+  artifactKey: Guid(d1e4a3e1339b0c84197ec2fe60c41ed6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Textures/stars.jpg using Guid(d1e4a3e1339b0c84197ec2fe60c41ed6) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '9b0820d4aa07fb068d64e097b7d10fc0') in 0.034649 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000030 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Meshes/shipfractured.fbx
+  artifactKey: Guid(5735f3b443f71894589af1323ad7a29b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Meshes/shipfractured.fbx using Guid(5735f3b443f71894589af1323ad7a29b) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'bc4b6b2cd2cc898a44e323b59c9c5ab5') in 0.099967 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 36
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/External/Addressables/UniTask.Addressables.asmdef
+  artifactKey: Guid(593a5b492d29ac6448b1ebf7f035ef33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/External/Addressables/UniTask.Addressables.asmdef using Guid(593a5b492d29ac6448b1ebf7f035ef33) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'a3de6674be66f854af40ec5241d5c734') in 0.030969 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000041 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncMethodBuilderAttribute.cs
+  artifactKey: Guid(02ce354d37b10454e8376062f7cbe57a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniTask/Runtime/CompilerServices/AsyncMethodBuilderAttribute.cs using Guid(02ce354d37b10454e8376062f7cbe57a) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '66b2564f3f0f31ce3921d79c1b9b739d') in 0.060348 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000696 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Main/BindingId.cs
+  artifactKey: Guid(05e8238358230bf4e9cbb692280d28f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Main/BindingId.cs using Guid(05e8238358230bf4e9cbb692280d28f1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '01458037b792f88fed2adb61622a0591') in 0.012262 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000083 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/FromBinders/FromBinderNonGeneric.cs
+  artifactKey: Guid(e54c591a4175efc4688be675528600c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/FromBinders/FromBinderNonGeneric.cs using Guid(e54c591a4175efc4688be675528600c1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '21104eb44f0bd4339376a818f0b342fc') in 0.030111 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/SubscribeOn.cs
+  artifactKey: Guid(bff34f363b1797c4396815b5b3a4be1c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/SubscribeOn.cs using Guid(bff34f363b1797c4396815b5b3a4be1c) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4f5def444646ac560e014c250357d97c') in 0.014868 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryToChoiceIdBinder/FactoryToChoiceIdBinder3.cs
+  artifactKey: Guid(be02341a689ce654ab7160ce4eb5ed0e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/Source/Binding/Binders/Factory/FactoryToChoiceIdBinder/FactoryToChoiceIdBinder3.cs using Guid(be02341a689ce654ab7160ce4eb5ed0e) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '693f3165e9748747caaff9c7778dd525') in 0.013022 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000036 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/TakeWhile.cs
+  artifactKey: Guid(d6f2da76023d9734ebb4ed1883fda2bc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/TakeWhile.cs using Guid(d6f2da76023d9734ebb4ed1883fda2bc) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '4647963b612a48a65e39b08ddeecf775') in 0.010635 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Catch.cs
+  artifactKey: Guid(404a684db151ca34f8258c6fb373db8d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/Catch.cs using Guid(404a684db151ca34f8258c6fb373db8d) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'd6814e764bf63497d2ae54e633e8e921') in 0.011431 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Materials/target.mat
+  artifactKey: Guid(6337eec4e613a6c44b441bb6b4ffbfa0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Media/Materials/target.mat using Guid(6337eec4e613a6c44b441bb6b4ffbfa0) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '6fbd3f5b1b8544ac3c990e39b3827e03') in 0.018314 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 2
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/CombineLatest.cs
+  artifactKey: Guid(64910ffa78510ee48b3a395ee5b2cfe1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/Operators/CombineLatest.cs using Guid(64910ffa78510ee48b3a395ee5b2cfe1) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: 'c067a35b9695e55b297af83180afd6db') in 0.029429 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000383 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/FrameInterval.cs
+  artifactKey: Guid(a731a1a74be20a04a9d7dedc5ceefab2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/UniRx/Scripts/UnityEngineBridge/Operators/FrameInterval.cs using Guid(a731a1a74be20a04a9d7dedc5ceefab2) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8f3584de0380dd946c256e7981a04ea3') in 0.033523 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Util/GameEvents.cs
+  artifactKey: Guid(44a6c869bd4f68c479f02155b98fbeca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23)
+Start importing Assets/TestTask_MobileGame/Assets/Plugins/Zenject/OptionalExtras/SampleGame1 (Beginner)/Scripts/Util/GameEvents.cs using Guid(44a6c869bd4f68c479f02155b98fbeca) Importer(2089858483,0ecaa5967403d082aa24f35e1b516d23) [PhysX] Initialized MultithreadedTaskDispatcher with 8 workers.
+ -> (artifact id: '8a48fbf51c1dfbf57d0d196592410300') in 0.020226 seconds
+Number of updated asset objects reloaded before import = 0
+Number of asset objects unloaded after import = 1
+========================================================================
+Received Prepare
+Switching render pipeline 00000000000000000000000000000000 -> 7a47944f5181ed94f94b6ddaec3e3d1a
+Refreshing native plugins compatible for Editor in 3.02 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 53 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 12 unused Assets / (0.8 MB). Loaded Objects now: 3577.
+Memory consumption went from 87.3 MB to 86.5 MB.
+Total: 9.137100 ms (FindLiveObjects: 0.565000 ms CreateObjectMapping: 0.204100 ms MarkObjects: 7.401500 ms  DeleteObjects: 0.964300 ms)
+
+Prepare: number of updated asset objects reloaded= 0
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+========================================================================
+Received Prepare
+Refreshing native plugins compatible for Editor in 2.81 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 16 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 2 unused Assets / (308.2 KB). Loaded Objects now: 3593.
+Memory consumption went from 90.4 MB to 90.1 MB.
+Total: 14.398000 ms (FindLiveObjects: 0.639100 ms CreateObjectMapping: 0.280300 ms MarkObjects: 13.247200 ms  DeleteObjects: 0.229300 ms)
+
+Prepare: number of updated asset objects reloaded= 1
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:SearchIndexIgnoredProperties: e643bd26f0fe6173181afceb89e7c659 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:AudioImporter_EditorPlatform: d09bf68614088b80899f8185d706f6e7 -> 
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:CustomObjectIndexerAttribute: 72b91833f83ae208fae7752999fa3104 -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+Editor requested this worker to shutdown with reason: balancing worker count downwards
+TcpMessagingSession - receive error
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0
