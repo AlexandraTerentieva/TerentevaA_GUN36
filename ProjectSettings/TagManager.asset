@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
+  - Resource
+  - Ground
+  - Base
+  - 'PatrolPoint '
+  - Ally
   layers:
   - Default
   - TransparentFX
