@@ -35,6 +35,11 @@ namespace SampleProject
                 return AnimatorStateId.MOVE;
             }
 
+            if (!this.attackPool.HasComponent(entity))
+            {
+                return AnimatorStateId.Death;
+            }
+
             return AnimatorStateId.IDLE;
         }
     }

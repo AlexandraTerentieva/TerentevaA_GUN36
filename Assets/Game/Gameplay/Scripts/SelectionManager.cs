@@ -53,7 +53,7 @@ public class SelectionManager : MonoBehaviour
         // --- ПРАВАЯ КНОПКА МЫШИ (выполнить действие) ---
         if (Input.GetMouseButtonDown(1))
         {
-            PerformAction(); // МОЁ: атака, сбор или движение
+            PerformAction(); // атака, сбор или движение
         }
     }
 
@@ -132,9 +132,6 @@ public class SelectionManager : MonoBehaviour
                 }
             }
         }
-
-        // Выводим в консоль количество выделенных
-        Debug.Log($"Выделено союзников: {selectedUnits.Count}");
     }
 
     // --- ПРОВЕРКА, ПОПАДАЕТ ЛИ ОБЪЕКТ В РАМКУ ---
@@ -197,12 +194,6 @@ public class SelectionManager : MonoBehaviour
     // - движение в точку (если клик по земле)
     private void PerformAction()
     {
-        // Если нет выделенных юнитов — выходим
-        if (selectedUnits.Count == 0)
-        {
-            Debug.Log("Нет выделенных союзников!");
-            return;
-        }
 
         // Кидаем луч от камеры через курсор мыши
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
@@ -212,7 +203,6 @@ public class SelectionManager : MonoBehaviour
             CommandController controller = FindObjectOfType<CommandController>();
             if (controller == null)
             {
-                Debug.LogError("CommandController не найден!");
                 return;
             }
 
@@ -228,7 +218,6 @@ public class SelectionManager : MonoBehaviour
                     {
                         controller.AttackTarget(unit, targetEntity);
                     }
-                    Debug.Log($"Отправляю {selectedUnits.Count} союзников атаковать врага!");
                     return;
                 }
             }
@@ -245,13 +234,12 @@ public class SelectionManager : MonoBehaviour
                     {
                         controller.GatherResource(unit, resourceEntity);
                     }
-                    Debug.Log($"Отправляю {selectedUnits.Count} союзников собирать ресурс!");
                     return;
                 }
             }
 
             // --- ПРОВЕРКА 3: попали в землю (слой groundLayer) ---
-            if (hit.collider.gameObject.layer == groundLayer)
+            if (((1 << hit.collider.gameObject.layer) & groundLayer) != 0)
             {
                 // Создаём временную точку в месте клика
                 GameObject tempPoint = new GameObject("TempPoint");
@@ -265,7 +253,6 @@ public class SelectionManager : MonoBehaviour
 
                 // Удаляем временную точку
                 Destroy(tempPoint);
-                Debug.Log($"Отправляю {selectedUnits.Count} союзников в точку {hit.point}");
             }
         }
     }

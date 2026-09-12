@@ -34,7 +34,6 @@ public class RtsControls : MonoBehaviour
                     tempPoint.transform.position = hit.point;
                     commandController.MoveToPosition(tempPoint.transform);
                     Destroy(tempPoint);
-                    Debug.Log("Идём в точку!");
                 }
                 // ЕСЛИ ЭТО ВРАГ — атакуем
                 else if (tag == "Enemy")
@@ -43,7 +42,6 @@ public class RtsControls : MonoBehaviour
                     if (entity != null)
                     {
                         commandController.AttackTarget(entity);
-                        Debug.Log("Атакуем врага!");
                     }
                 }
                 // ЕСЛИ ЭТО РЕСУРС — собираем
@@ -55,18 +53,13 @@ public class RtsControls : MonoBehaviour
                     {
                         // Отправляем команду на сбор ресурса
                         commandController.GatherResource(resourceEntity);
-                        Debug.Log("Собираем ресурс!");
 
-                        // МОЁ: находим скрипт ResourceCollector на персонаже (чтобы увеличить счётчик ресурсов)
+                        // находим скрипт ResourceCollector на персонаже (чтобы увеличить счётчик ресурсов)
                         ResourceCollector collector = FindObjectOfType<ResourceCollector>();
                         if (collector != null)
                         {
                             collector.OnResourceCollected(); // Вызываем метод увеличения счётчика
                         }
-                    }
-                    else
-                    {
-                        Debug.Log("ResourceEntity не найден на ресурсе!");
                     }
                 }
             }
